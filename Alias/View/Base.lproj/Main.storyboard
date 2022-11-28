@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Alias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" image="Background-Bubbles" translatesAutoresizingMaskIntoConstraints="NO" id="b3C-DY-dW5">
+                                <rect key="frame" x="0.0" y="794" width="414" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="gqL-Vh-RXy"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alias launch" translatesAutoresizingMaskIntoConstraints="NO" id="PWV-gz-bAs">
+                                <rect key="frame" x="16" y="64" width="382" height="358.5"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EfW-d2-VEw">
+                                <rect key="frame" x="50" y="430.5" width="314" height="116"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOV-2u-P2A" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="NT8-70-2iv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Play">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="qoX-Ps-B3F" kind="presentation" modalPresentationStyle="fullScreen" id="NsO-N9-DEO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ex-Or-YFf" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="314" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="A9P-gk-Kwb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Rules">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" systemColor="labelColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="U4d-Cx-DAb" kind="presentation" modalPresentationStyle="fullScreen" id="tNP-cg-1Wm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b3C-DY-dW5" secondAttribute="trailing" id="0ro-sk-eBE"/>
+                            <constraint firstItem="EfW-d2-VEw" firstAttribute="top" secondItem="PWV-gz-bAs" secondAttribute="bottom" constant="8" id="5LV-av-cb9"/>
+                            <constraint firstItem="b3C-DY-dW5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9UI-Ez-FKV"/>
+                            <constraint firstItem="EfW-d2-VEw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="9wY-d2-MKk"/>
+                            <constraint firstItem="PWV-gz-bAs" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="EKw-We-38d"/>
+                            <constraint firstItem="b3C-DY-dW5" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="G7A-4b-Qv6"/>
+                            <constraint firstItem="PWV-gz-bAs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="K9h-Qx-qf2"/>
+                            <constraint firstItem="PWV-gz-bAs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Ntx-Rh-zmy"/>
+                            <constraint firstItem="PWV-gz-bAs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="VOY-qc-gxm"/>
+                            <constraint firstItem="EfW-d2-VEw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YKP-Md-A5k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EfW-d2-VEw" secondAttribute="trailing" constant="50" id="iAH-i8-I1J"/>
+                            <constraint firstAttribute="trailing" secondItem="PWV-gz-bAs" secondAttribute="trailing" constant="16" id="qzN-xe-Dkw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="80"/>
+        </scene>
+        <!--Choice View Controller-->
+        <scene sceneID="UZB-oR-HLS">
+            <objects>
+                <viewController id="qoX-Ps-B3F" customClass="ChoiceViewController" customModule="Alias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Axh-nI-wU5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="eHM-5f-JCb">
+                                <rect key="frame" x="30" y="150" width="354" height="596"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAV-2Q-SMY" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="137"/>
+                                        <color key="backgroundColor" red="1" green="0.96808999780000005" blue="0.72938609119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="36"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title=" Тема1">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="jXq-WP-5bl"/>
+                                            <segue destination="Nlz-C6-sPy" kind="presentation" modalPresentationStyle="fullScreen" id="bpa-Tb-xRU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-Vc-D1V" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="153" width="354" height="137"/>
+                                        <color key="backgroundColor" red="1" green="0.96808999780000005" blue="0.72938609119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="36"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Тема2">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="1Fl-M6-XJK"/>
+                                            <segue destination="Nlz-C6-sPy" kind="presentation" modalPresentationStyle="fullScreen" id="LQm-t3-Wc1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnO-5b-rmE" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="306" width="354" height="137"/>
+                                        <color key="backgroundColor" red="1" green="0.96808999780000005" blue="0.72938609119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="36"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Тема3">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="gBv-UD-8Ll"/>
+                                            <segue destination="Nlz-C6-sPy" kind="presentation" modalPresentationStyle="fullScreen" id="Q34-Kh-Y6t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fm-cE-aOM" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="459" width="354" height="137"/>
+                                        <color key="backgroundColor" red="1" green="0.96808999780000005" blue="0.72938609119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="36"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Тема4">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="ReT-ab-fJD"/>
+                                            <segue destination="Nlz-C6-sPy" kind="presentation" modalPresentationStyle="fullScreen" id="q0x-VE-kTP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="QMZ-dR-wRZ">
+                                <rect key="frame" x="356" y="56" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="7Hl-xn-N02"/>
+                                    <constraint firstAttribute="height" constant="50" id="XM7-xy-WYD"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.96808999780000005" blue="0.72938609119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top">
+                                    <imageReference key="image" image="xmark.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    </preferredSymbolConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closePressed" destination="Nlz-C6-sPy" eventType="touchUpInside" id="dRh-Og-rqc"/>
+                                    <action selector="closePressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="oSv-bc-JRO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dlx-Mv-q6B"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="QMZ-dR-wRZ" firstAttribute="top" secondItem="Dlx-Mv-q6B" secondAttribute="top" constant="8" id="4Hh-B7-9SR"/>
+                            <constraint firstItem="Dlx-Mv-q6B" firstAttribute="trailing" secondItem="eHM-5f-JCb" secondAttribute="trailing" constant="30" id="8tV-SQ-Ifh"/>
+                            <constraint firstItem="eHM-5f-JCb" firstAttribute="centerX" secondItem="Axh-nI-wU5" secondAttribute="centerX" id="DZU-id-u8d"/>
+                            <constraint firstItem="Dlx-Mv-q6B" firstAttribute="trailing" secondItem="QMZ-dR-wRZ" secondAttribute="trailing" constant="8" id="LoB-JF-Zmm"/>
+                            <constraint firstItem="eHM-5f-JCb" firstAttribute="top" secondItem="Axh-nI-wU5" secondAttribute="top" constant="150" id="XWB-X1-6u5"/>
+                            <constraint firstItem="eHM-5f-JCb" firstAttribute="centerY" secondItem="Axh-nI-wU5" secondAttribute="centerY" id="hs4-H3-GaW"/>
+                            <constraint firstItem="eHM-5f-JCb" firstAttribute="leading" secondItem="Dlx-Mv-q6B" secondAttribute="leading" constant="30" id="ofS-vt-9u1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SUQ-S5-Gay"/>
+                    <connections>
+                        <outlet property="topicFour" destination="4fm-cE-aOM" id="KFt-rI-ead"/>
+                        <outlet property="topicOne" destination="fAV-2Q-SMY" id="Zdl-3x-QPI"/>
+                        <outlet property="topicThree" destination="jnO-5b-rmE" id="7Z9-40-jrX"/>
+                        <outlet property="topicTwo" destination="VdW-Vc-D1V" id="759-9h-afa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6zd-Ol-FgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="80"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="1an-Mv-NQ5">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Nlz-C6-sPy" customClass="GameViewController" customModule="Alias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DYo-l2-6bd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" image="Background-Bubbles" translatesAutoresizingMaskIntoConstraints="NO" id="fBm-sE-VZU">
+                                <rect key="frame" x="0.0" y="794" width="414" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="MgD-pr-cTC"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="djP-Gc-9Jg">
+                                <rect key="frame" x="20" y="48" width="374" height="814"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time remaining:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9S-Ja-mFM">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="64.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbJ-AK-3pF" userLabel="Status Label">
+                                        <rect key="frame" x="0.0" y="72.5" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="qZf-DE-aKB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" verticalCompressionResistancePriority="1000" text="Word in question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xyd-Em-moO">
+                                        <rect key="frame" x="0.0" y="130.5" width="374" height="403.5"/>
+                                        <color key="backgroundColor" red="1" green="0.96813698079999999" blue="0.67577980897405399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" red="0.78184807300000003" green="0.54776906970000006" blue="0.1891413629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4M-9R-O4d">
+                                        <rect key="frame" x="0.0" y="542" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="tPL-lG-nPJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPM-MO-2B9">
+                                        <rect key="frame" x="0.0" y="600" width="374" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.96813698079999999" blue="0.73076802129999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="S1T-H8-WFT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Correct">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="correctPressedWithSender:" destination="Nlz-C6-sPy" eventType="touchUpInside" id="yVB-q0-SX5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HS-be-vcP">
+                                        <rect key="frame" x="0.0" y="668" width="374" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.96813698079999999" blue="0.73076802129999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="FR8-jq-Feu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Incorrect">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="incorrectPressed" destination="Nlz-C6-sPy" eventType="touchUpInside" id="mPW-7z-8Uk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVk-G1-izO" userLabel="Skip Button">
+                                        <rect key="frame" x="0.0" y="736" width="374" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.96813698079999999" blue="0.73076802129999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="z9z-fH-K68"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Skip">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="skipPressed:" destination="Nlz-C6-sPy" eventType="touchUpInside" id="QWL-MD-F7q"/>
+                                        </connections>
+                                    </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c2K-dd-ueR">
+                                        <rect key="frame" x="0.0" y="804" width="374" height="11"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.2770131528" green="0.3800790906" blue="0.57570761439999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="bX9-ti-8EG"/>
+                                        </constraints>
+                                        <color key="progressTintColor" name="AccentColor"/>
+                                        <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="tjc-pG-yek">
+                                <rect key="frame" x="356" y="56" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="6db-eH-7Lg"/>
+                                    <constraint firstAttribute="height" constant="50" id="PRu-wy-K7Y"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99488228560000003" green="0.91387653349999998" blue="0.58912760019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top">
+                                    <imageReference key="image" image="xmark.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    </preferredSymbolConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closePressed" destination="Nlz-C6-sPy" eventType="touchUpInside" id="6Fi-MH-rdU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nWb-DR-aPI"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="djP-Gc-9Jg" firstAttribute="top" secondItem="nWb-DR-aPI" secondAttribute="top" id="3gO-bi-M0h"/>
+                            <constraint firstItem="tjc-pG-yek" firstAttribute="top" secondItem="nWb-DR-aPI" secondAttribute="top" constant="8" id="OQW-7a-Rzr"/>
+                            <constraint firstAttribute="bottom" secondItem="fBm-sE-VZU" secondAttribute="bottom" id="UDA-hI-bmg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="djP-Gc-9Jg" secondAttribute="trailing" id="aWv-Ov-rw0"/>
+                            <constraint firstItem="fBm-sE-VZU" firstAttribute="leading" secondItem="nWb-DR-aPI" secondAttribute="leading" id="eOY-pb-jFh"/>
+                            <constraint firstItem="djP-Gc-9Jg" firstAttribute="leading" secondItem="DYo-l2-6bd" secondAttribute="leadingMargin" id="enP-dC-L2S"/>
+                            <constraint firstItem="nWb-DR-aPI" firstAttribute="bottom" secondItem="djP-Gc-9Jg" secondAttribute="bottom" id="hw8-A7-r3y"/>
+                            <constraint firstItem="nWb-DR-aPI" firstAttribute="trailing" secondItem="tjc-pG-yek" secondAttribute="trailing" constant="8" id="iXR-hB-0Bk"/>
+                            <constraint firstItem="fBm-sE-VZU" firstAttribute="trailing" secondItem="nWb-DR-aPI" secondAttribute="trailing" id="w3n-c3-CSm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AAY-ne-cBG"/>
+                    <connections>
+                        <outlet property="correctButton" destination="rPM-MO-2B9" id="UCe-sz-Y8w"/>
+                        <outlet property="incorrectButton" destination="1HS-be-vcP" id="EML-1P-eiZ"/>
+                        <outlet property="progress" destination="c2K-dd-ueR" id="II4-B8-ccE"/>
+                        <outlet property="scoreLabel" destination="f4M-9R-O4d" id="pM8-da-7SV"/>
+                        <outlet property="skipButton" destination="nVk-G1-izO" id="Rfq-ro-OOx"/>
+                        <outlet property="statusLabel" destination="NbJ-AK-3pF" id="t7e-VX-Zrf"/>
+                        <outlet property="timeRemainingLabel" destination="b9S-Ja-mFM" id="cY0-5I-efY"/>
+                        <outlet property="wordLabel" destination="xyd-Em-moO" id="UNC-H5-u3y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DuQ-Lc-0d9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1710" y="80"/>
+        </scene>
+        <!--Rules View Controller-->
+        <scene sceneID="4HF-X3-Tgj">
+            <objects>
+                <viewController id="U4d-Cx-DAb" customClass="RulesViewController" customModule="Alias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LvF-mo-Yww">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrM-RZ-V2A">
+                                <rect key="frame" x="20" y="98" width="374" height="744"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Правила игры">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="36" name="SFPro-Black"/>
+                                            <font key="NSOriginalFont" size="36" name="SFPro-Black"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="36" name="SFPro-Black"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+CiAKA
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="18"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Alias: Скажи иначе
+
+В игру играют командами из двух или более
+человек. Задача каждого игрока команды -
+объяснить как можно больше слов
+отображаемых на экране за ограниченное
+время другими словами, используя,
+например, синонимы, антонимы и подсказки
+так, чтобы члены вашей команды смогли
+отгадать как можно больше слов прежде
+чем истечет время. Чем больше слов
+отгадала команда, тем больше она
+заработает баллов.
+
+Объяснение слов
+
+При объяснении слов нельзя упоминать
+какую-либо часть слова. Например, слово
+«кофеварка» нельзя объяснять как «аппарат
+для варки кофе». Правильный способ
+объяснения будет следующий: «аппарат для
+приготовления крепкого напитка, который
+обычно пьют за завтраком». Можно
+использовать синонимы - то есть вы можете
+сказать «кипятить», но не «варить».
+
+Вы можете использовать антонимы. Слово
+«большой» может быть объяснено как
+«антоним слова маленький». Вы не можете
+использовать иностранные языки, за
+исключением тех случаев, когда все игроки
+согласились с этим.
+
+Отгаданное слово должно точно совпадать.
+Объясняющий игрок помогает
+отгадывающим найти правильную форму
+слова. Если слово состоит из двух частей и
+кто-то отгадывает первую часть, вы потом
+можете использовать эту часть слова в
+дальнейшем объяснении.
+
+Начисление очков
+
+За каждое отгаданное слово команда
+получает одно очко, а за пропущенное или
+отгаданное с нарушением - штрафуется (в
+зависимости от настроек).
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="18"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+CtCV0YHQu9C4INC+0LHRitGP0YHQvdGP0Y7RidC40Lkg0LjQs9GA0L7QuiDQtNC+0L/Rg9GB0LrQsNC1
+0YIg0L7RiNC40LHQutGDIC0K0L3QsNC/0YDQuNC80LXRgCwg0L3QsNC30YvQstCw0LXRgiDRh9Cw0YHR
+gtGMINGB0LvQvtCy0LAsINGD0LrQsNC30LDQvdC90L7Qs9C+CtCyINC60LDRgNGC0L7Rh9C60LUsINGB
+0LvQvtCy0L4g0L3QtSDQsdGD0LTQtdGCINC/0YDQuNC90Y/RgtC+INC4CtC60L7QvNCw0L3QtNCwINC/
+0L7RgtC10YDRj9C10YIgMSDQvtGH0LrQvi4g0J/QvtGN0YLQvtC80YMg0LrQsNC20LTQsNGPCtC60L7Q
+vNCw0L3QtNCwINC00L7Qu9C20L3QsCDQstC90LjQvNCw0YLQtdC70YzQvdC+INGB0LvRg9GI0LDRgtGM
+CtC+0LHRitGP0YHQvdC10L3QuNGPINC00YDRg9Cz0LjRhSDQutC+0LzQsNC90LQuINCV0YHQu9C4INGB
+0LvQvtCy0L4K0LrQsNC20LXRgtGB0Y8g0YHQu9C40YjQutC+0Lwg0YLRj9C20LXQu9GL0LwsINCy0Ysg
+0LzQvtC20LXRgtC1INC10LPQvgrQv9GA0L7Qv9GD0YHRgtC40YLRjCwg0L3QviDQv9C+0LzQvdC40YLQ
+tSwg0YfRgtC+INC30LAg0Y3RgtC+INCy0YsK0L/QvtGC0LXRgNGP0LXRgtC1INC+0YfQutC4LiDQntC0
+0L3QsNC60L4sINC40L3QvtCz0LTQsCDRjdGC0L4g0YLQvtCz0L4K0YHRgtC+0LjRgiwg0YLQsNC6INC6
+0LDQuiDQstGLINC80L7QttC10YLQtSDRgdGN0LrQvtC90L7QvNC40YLRjCDQstGA0LXQvNGPLgoKItCf
+0L7RgdC70LXQtNC90LXQtSDRgdC70L7QstC+INC00LvRjyDQstGB0LXRhSIgLSDQtdGB0LvQuCDQstC6
+0LvRjtGH0LXQvdCwCtGN0YLQsCDQvtC/0YbQuNGPLCDQv9C+INC40YHRgtC10YfQtdC90LjQuCDQstGA
+0LXQvNC10L3QuCDRgNCw0YPQvdC00LAsCtGB0LvQvtCy0L4g0LzQvtCz0YPRgiDQvtGC0LPQsNC00YvQ
+stCw0YLRjCDQstGB0LUg0LrQvtC80LDQvdC00YsuINCSCtGN0YLQvtC8INGB0LvRg9GH0LDQtSAxINC+
+0YfQutC+INC/0L7Qu9GD0YfQuNGCINC60L7QvNCw0L3QtNCwCtC+0YLQs9Cw0LTQsNCy0YjQtdC1INGB
+0LvQvtCy0L4uCgrQn9C+0LHQtdC00LjRgtC10LvQtdC8INGB0YfQuNGC0LDQtdGC0YHRjyDQutC+0LzQ
+sNC90LTQsCwg0L3QsNCx0YDQsNCy0YjQsNGPCtC90LXQvtCx0YXQvtC00LjQvNC+0LUg0LTQu9GPINC/
+0L7QsdC10LTRiyDQutC+0LvQuNGH0LXRgdGC0LLQviDQvtGH0LrQvtCyLgrQldGB0LvQuCDQvdCwINC8
+0L7QvNC10L3RgiDQt9Cw0LLQtdGA0YjQtdC90LjRjyDQv9C+0LHQtdC00L3QvtCz0L4K0YDQsNGD0L3Q
+tNCwINGDINC60L7QvNCw0L3QtCDQvtC00LjQvdCw0LrQvtCy0L7QtSDQutC+0LvQuNGH0LXRgdGC0LLQ
+vgrQvtGH0LrQvtCyIC0g0L/RgNC+0LLQvtC00LjRgtGM0YHRjyDQtNC+0L/QvtC70L3QuNGC0LXQu9GM
+0L3Ri9C5INGA0LDRg9C90LQKKNCe0LLQtdGA0YLQsNC50LwpLgoK0JfQsNC00LDQvdC40Y8KCtCV0YHQ
+u9C4INCyINGA0LDRg9C90LTQtSDQtdGB0YLRjCDQt9Cw0LTQsNC90LjQtSAtINC60L7QvNCw0L3QtNCw
+INC80L7QttC10YIK0L/QvtC70YPRh9C40YLRjCDQsdC+0L3Rg9GB0L3Ri9C1INCx0LDQu9GLINC30LAg
+0LXQs9C+INCy0YvQv9C+0LvQvdC10L3QuNC1LgoK0JXRgdC70Lgg0LLQsNC8INGD0LTQsNGB0YLRgdGP
+INC+0LHRitGP0YHQvdC40YLRjCDQstGB0LUg0YHQu9C+0LLQsCDQsgrRgdC+0L7RgtCy0LXRgtGB0YLQ
+stC40Lgg0YEg0LfQsNC00LDQvdC40LXQvCwg0YLQviDQstCw0YjQsCDQutC+0LzQsNC90LTQsArQv9C+
+0LvRg9GH0LDQtdGCINCx0L7QvdGD0YHQvdGL0LUg0L7Rh9C60LgsINC90L4g0YLQvtC70YzQutC+INC1
+0YHQu9C4CtC00YDRg9Cz0LjQtSDQutC+0LzQsNC90LTRiyDRgdGH0LjRgtCw0Y7RgiDQstCw0YjQtSDQ
+stGL0L/QvtC70L3QtdC90LjQtQrRg9Cx0LXQtNC40YLQtdC70YzQvdGL0LwuINCa0L7Qu9C40YfQtdGB
+0YLQstC+INCx0L7QvdGD0YHQvdGL0YUg0LHQsNC70L7QsgrQvtC/0YDQtdC00LXQu9GP0LXRgtGB0Y8g
+0YHQu9GD0YfQsNC50L3QviDQsiDQuNC90YLQtdGA0LLQsNC70LUg0L7RgiA3INC00L4KMTAuCgrQo9C0
+0LDRh9C4IQoMA
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="18"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="Qra-yp-ooA">
+                                <rect key="frame" x="338.5" y="48" width="75.5" height="54.5"/>
+                                <color key="tintColor" red="1" green="0.96813698079999999" blue="0.73076802129999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top">
+                                    <imageReference key="image" image="xmark.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    </preferredSymbolConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backButton:" destination="U4d-Cx-DAb" eventType="touchUpInside" id="PbY-Kx-THp"/>
+                                    <action selector="closePressed" destination="Nlz-C6-sPy" eventType="touchUpInside" id="sBp-rD-Chh"/>
+                                    <action selector="closePressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="Ltz-7i-lUB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="irn-ds-wV6"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="irn-ds-wV6" firstAttribute="bottom" secondItem="NrM-RZ-V2A" secondAttribute="bottom" constant="20" id="2C7-aH-hHj"/>
+                            <constraint firstItem="irn-ds-wV6" firstAttribute="trailing" secondItem="Qra-yp-ooA" secondAttribute="trailing" id="2em-jI-b7h"/>
+                            <constraint firstItem="NrM-RZ-V2A" firstAttribute="centerX" secondItem="LvF-mo-Yww" secondAttribute="centerX" id="5lM-9m-dwe"/>
+                            <constraint firstItem="irn-ds-wV6" firstAttribute="trailing" secondItem="NrM-RZ-V2A" secondAttribute="trailing" constant="20" id="It8-LK-7kH"/>
+                            <constraint firstItem="NrM-RZ-V2A" firstAttribute="top" secondItem="irn-ds-wV6" secondAttribute="top" constant="50" id="M96-8X-s65"/>
+                            <constraint firstItem="NrM-RZ-V2A" firstAttribute="leading" secondItem="irn-ds-wV6" secondAttribute="leading" constant="20" id="hy0-p6-GZB"/>
+                            <constraint firstItem="Qra-yp-ooA" firstAttribute="top" secondItem="irn-ds-wV6" secondAttribute="top" id="xNw-6V-2OR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rBQ-VM-lCt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwh-fq-WXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="856"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="1HS-be-vcP">
+            <size key="intrinsicContentSize" width="106" height="42"/>
+        </designable>
+        <designable name="2ex-Or-YFf">
+            <size key="intrinsicContentSize" width="65" height="42"/>
+        </designable>
+        <designable name="4fm-cE-aOM">
+            <size key="intrinsicContentSize" width="118" height="55"/>
+        </designable>
+        <designable name="VdW-Vc-D1V">
+            <size key="intrinsicContentSize" width="117" height="55"/>
+        </designable>
+        <designable name="fAV-2Q-SMY">
+            <size key="intrinsicContentSize" width="119" height="55"/>
+        </designable>
+        <designable name="jnO-5b-rmE">
+            <size key="intrinsicContentSize" width="118" height="55"/>
+        </designable>
+        <designable name="nVk-G1-izO">
+            <size key="intrinsicContentSize" width="52" height="42"/>
+        </designable>
+        <designable name="rPM-MO-2B9">
+            <size key="intrinsicContentSize" width="89" height="42"/>
+        </designable>
+        <designable name="zOV-2u-P2A">
+            <size key="intrinsicContentSize" width="50" height="42"/>
+        </designable>
+    </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="q0x-VE-kTP"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Alias launch" width="350" height="550"/>
+        <image name="Background-Bubbles" width="352" height="102"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
+        <namedColor name="AccentColor">
+            <color red="0.98000001907348633" green="0.68500000238418579" blue="0.23999999463558197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

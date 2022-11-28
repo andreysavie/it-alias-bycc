@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Background-Bubbles.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

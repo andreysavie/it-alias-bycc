@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<<<<<<< HEAD
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+=======
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+>>>>>>> main
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Alias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+<<<<<<< HEAD
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="EfW-d2-VEw">
+                                <rect key="frame" x="120" y="259.66666666666669" width="150" height="325.00000000000006"/>
+=======
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="EfW-d2-VEw">
+                                <rect key="frame" x="139" y="400.66666666666669" width="150" height="125.00000000000006"/>
+>>>>>>> main
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOV-2u-P2A" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="NT8-70-2iv"/>
+                                            <constraint firstAttribute="width" constant="150" id="eCP-AM-1gt"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Играть">
+                                            <backgroundConfiguration key="background" cornerRadius="19"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="qoX-Ps-B3F" kind="presentation" modalPresentationStyle="fullScreen" id="NsO-N9-DEO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ex-Or-YFf" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="75" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="A9P-gk-Kwb"/>
+                                            <constraint firstAttribute="width" constant="150" id="yWc-dl-P7W"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Правила">
+                                            <backgroundConfiguration key="background" cornerRadius="19"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="U4d-Cx-DAb" kind="presentation" modalPresentationStyle="fullScreen" id="tNP-cg-1Wm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIi-GE-izN">
+                                <rect key="frame" x="172.66666666666666" y="94" width="82.666666666666657" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="EfW-d2-VEw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YDS-0s-D0R"/>
+                            <constraint firstItem="EfW-d2-VEw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YKP-Md-A5k"/>
+                            <constraint firstItem="TIi-GE-izN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nkP-7V-kp9"/>
+                            <constraint firstItem="TIi-GE-izN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="sn4-mJ-Hhd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="80"/>
+        </scene>
+        <!--Choice View Controller-->
+        <scene sceneID="UZB-oR-HLS">
+            <objects>
+                <viewController id="qoX-Ps-B3F" customClass="ChoiceViewController" customModule="Alias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Axh-nI-wU5">
+<<<<<<< HEAD
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="eHM-5f-JCb">
+                                <rect key="frame" x="120" y="57.666666666666686" width="150" height="675"/>
+=======
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eHM-5f-JCb">
+                                <rect key="frame" x="30" y="150" width="368" height="626"/>
+>>>>>>> main
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAV-2Q-SMY" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="119"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" Тема1">
+                                            <backgroundConfiguration key="background" cornerRadius="19"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="jXq-WP-5bl"/>
+                                            <segue destination="Nlz-C6-sPy" kind="presentation" modalPresentationStyle="fullScreen" id="bpa-Tb-xRU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-Vc-D1V" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="169" width="368" height="119"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Тема2">
+                                            <backgroundConfiguration key="background" cornerRadius="19"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="1Fl-M6-XJK"/>
+                                            <segue destination="Nlz-C6-sPy" kind="show" id="LQm-t3-Wc1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnO-5b-rmE" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="338" width="368" height="119"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Тема3">
+                                            <backgroundConfiguration key="background" cornerRadius="19"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="gBv-UD-8Ll"/>
+                                            <segue destination="Nlz-C6-sPy" kind="show" id="Q34-Kh-Y6t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fm-cE-aOM" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="507" width="368" height="119"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Тема4">
+                                            <backgroundConfiguration key="background" cornerRadius="19"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="ReT-ab-fJD"/>
+                                            <segue destination="Nlz-C6-sPy" kind="show" id="q0x-VE-kTP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="QMZ-dR-wRZ">
+                                <rect key="frame" x="357.66666666666669" y="44" width="70.333333333333314" height="51"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top">
+                                    <imageReference key="image" image="xmark.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    </preferredSymbolConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closePressed" destination="Nlz-C6-sPy" eventType="touchUpInside" id="dRh-Og-rqc"/>
+                                    <action selector="closePressed:" destination="qoX-Ps-B3F" eventType="touchUpInside" id="oSv-bc-JRO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dlx-Mv-q6B"/>
+                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="QMZ-dR-wRZ" firstAttribute="top" secondItem="Dlx-Mv-q6B" secondAttribute="top" id="4Hh-B7-9SR"/>
+                            <constraint firstItem="Dlx-Mv-q6B" firstAttribute="trailing" secondItem="eHM-5f-JCb" secondAttribute="trailing" constant="30" id="8tV-SQ-Ifh"/>
+                            <constraint firstItem="eHM-5f-JCb" firstAttribute="centerX" secondItem="Axh-nI-wU5" secondAttribute="centerX" id="DZU-id-u8d"/>
+                            <constraint firstItem="Dlx-Mv-q6B" firstAttribute="trailing" secondItem="QMZ-dR-wRZ" secondAttribute="trailing" id="LoB-JF-Zmm"/>
+                            <constraint firstItem="eHM-5f-JCb" firstAttribute="top" secondItem="Axh-nI-wU5" secondAttribute="top" constant="150" id="XWB-X1-6u5"/>
+                            <constraint firstItem="eHM-5f-JCb" firstAttribute="centerY" secondItem="Axh-nI-wU5" secondAttribute="centerY" id="hs4-H3-GaW"/>
+                            <constraint firstItem="eHM-5f-JCb" firstAttribute="leading" secondItem="Dlx-Mv-q6B" secondAttribute="leading" constant="30" id="ofS-vt-9u1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SUQ-S5-Gay"/>
+                    <connections>
+                        <outlet property="topicFour" destination="4fm-cE-aOM" id="KFt-rI-ead"/>
+                        <outlet property="topicOne" destination="fAV-2Q-SMY" id="Zdl-3x-QPI"/>
+                        <outlet property="topicThree" destination="jnO-5b-rmE" id="7Z9-40-jrX"/>
+                        <outlet property="topicTwo" destination="VdW-Vc-D1V" id="759-9h-afa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6zd-Ol-FgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="80"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="1an-Mv-NQ5">
+            <objects>
+<<<<<<< HEAD
+                <viewController id="Nlz-C6-sPy" customClass="GameViewController" customModule="Alias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ndd-zN-Fz0">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Слово" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XQ-h1-FMo">
+                                <rect key="frame" x="124.00000000000001" y="365" width="142.33333333333337" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Счетчик" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cet-mc-41X">
+                                <rect key="frame" x="331" y="44" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Таймер" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2h-ba-VMc">
+                                <rect key="frame" x="177" y="291" width="61" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="6b8-x6-0GZ">
+                                <rect key="frame" x="32.666666666666657" y="560" width="325" height="150"/>
+=======
+                <viewController modalPresentationStyle="fullScreen" id="Nlz-C6-sPy" customClass="GameViewController" customModule="Alias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DYo-l2-6bd">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" image="Background-Bubbles" translatesAutoresizingMaskIntoConstraints="NO" id="fBm-sE-VZU">
+                                <rect key="frame" x="0.0" y="824" width="428" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="MgD-pr-cTC"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="djP-Gc-9Jg">
+                                <rect key="frame" x="20" y="44" width="388" height="848"/>
+>>>>>>> main
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time remaining:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9S-Ja-mFM">
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="65.333333333333329"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4M-9R-O4d">
+                                        <rect key="frame" x="0.0" y="75.333333333333329" width="388" height="64.999999999999986"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Word in question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xyd-Em-moO">
+                                        <rect key="frame" x="0.0" y="150.33333333333334" width="388" height="407.66666666666663"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPM-MO-2B9" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="568" width="388" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="c0l-q0-fWP"/>
+                                        </constraints>
+<<<<<<< HEAD
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Правильно">
+                                            <backgroundConfiguration key="background" cornerRadius="19">
+                                                <color key="backgroundColor" red="0.14901961389999999" green="0.2588235438" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="TrueButtonPressed:" destination="Nlz-C6-sPy" eventType="touchUpInside" id="qRX-B4-K6r"/>
+=======
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Correct"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="correctPressedWithSender:" destination="Nlz-C6-sPy" eventType="touchUpInside" id="yVB-q0-SX5"/>
+>>>>>>> main
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HS-be-vcP" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="658" width="388" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="FR8-jq-Feu"/>
+                                        </constraints>
+<<<<<<< HEAD
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Пропустить">
+                                            <backgroundConfiguration key="background" cornerRadius="19">
+                                                <color key="backgroundColor" red="0.14901961389999999" green="0.2588235438" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="SkipButtonPressed:" destination="Nlz-C6-sPy" eventType="touchUpInside" id="850-Wu-7EN"/>
+=======
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Incorrect"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="incorrectPressed" destination="Nlz-C6-sPy" eventType="touchUpInside" id="mPW-7z-8Uk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjQ-bB-eWZ" userLabel="Next-Reset" customClass="GradientBorderButton" customModule="Alias" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="748" width="388" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="FXM-UY-edd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="nextPressed" destination="Nlz-C6-sPy" eventType="touchUpInside" id="ESX-SJ-W8g"/>
+>>>>>>> main
+                                        </connections>
+                                    </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c2K-dd-ueR">
+                                        <rect key="frame" x="0.0" y="838" width="388" height="11"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.2770131528" green="0.3800790906" blue="0.57570761439999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="bX9-ti-8EG"/>
+                                        </constraints>
+                                        <color key="progressTintColor" name="AccentColor"/>
+                                        <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="tjc-pG-yek">
+                                <rect key="frame" x="357.66666666666669" y="44" width="70.333333333333314" height="51"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top">
+                                    <imageReference key="image" image="xmark.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    </preferredSymbolConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closePressed" destination="Nlz-C6-sPy" eventType="touchUpInside" id="6Fi-MH-rdU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nWb-DR-aPI"/>
+                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="djP-Gc-9Jg" firstAttribute="top" secondItem="nWb-DR-aPI" secondAttribute="top" id="3gO-bi-M0h"/>
+                            <constraint firstItem="tjc-pG-yek" firstAttribute="top" secondItem="nWb-DR-aPI" secondAttribute="top" id="OQW-7a-Rzr"/>
+                            <constraint firstAttribute="bottom" secondItem="fBm-sE-VZU" secondAttribute="bottom" id="UDA-hI-bmg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="djP-Gc-9Jg" secondAttribute="trailing" id="aWv-Ov-rw0"/>
+                            <constraint firstItem="fBm-sE-VZU" firstAttribute="leading" secondItem="nWb-DR-aPI" secondAttribute="leading" id="eOY-pb-jFh"/>
+                            <constraint firstItem="djP-Gc-9Jg" firstAttribute="leading" secondItem="DYo-l2-6bd" secondAttribute="leadingMargin" id="enP-dC-L2S"/>
+                            <constraint firstItem="nWb-DR-aPI" firstAttribute="bottom" secondItem="djP-Gc-9Jg" secondAttribute="bottom" id="hw8-A7-r3y"/>
+                            <constraint firstItem="nWb-DR-aPI" firstAttribute="trailing" secondItem="tjc-pG-yek" secondAttribute="trailing" id="iXR-hB-0Bk"/>
+                            <constraint firstItem="fBm-sE-VZU" firstAttribute="trailing" secondItem="nWb-DR-aPI" secondAttribute="trailing" id="w3n-c3-CSm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AAY-ne-cBG"/>
+                    <connections>
+                        <outlet property="correctButton" destination="rPM-MO-2B9" id="UCe-sz-Y8w"/>
+                        <outlet property="incorrectButton" destination="1HS-be-vcP" id="EML-1P-eiZ"/>
+                        <outlet property="nextButton" destination="LjQ-bB-eWZ" id="oJ7-dg-P2k"/>
+                        <outlet property="progress" destination="c2K-dd-ueR" id="II4-B8-ccE"/>
+                        <outlet property="scoreLabel" destination="f4M-9R-O4d" id="pM8-da-7SV"/>
+                        <outlet property="timeRemainingLabel" destination="b9S-Ja-mFM" id="cY0-5I-efY"/>
+                        <outlet property="wordLabel" destination="xyd-Em-moO" id="UNC-H5-u3y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DuQ-Lc-0d9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1710" y="80"/>
+        </scene>
+<<<<<<< HEAD
+        <!--Result View Controller-->
+        <scene sceneID="AEb-z6-h3q">
+            <objects>
+                <viewController id="rpw-lx-O2y" customClass="ResultViewController" customModule="Alias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DZg-kA-uHW">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="OEi-tQ-kGG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IXO-n2-8HI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2510" y="105"/>
+        </scene>
+=======
+>>>>>>> main
+        <!--Rules View Controller-->
+        <scene sceneID="4HF-X3-Tgj">
+            <objects>
+                <viewController id="U4d-Cx-DAb" customClass="RulesViewController" customModule="Alias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LvF-mo-Yww">
+<<<<<<< HEAD
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NrM-RZ-V2A">
+                                <rect key="frame" x="20" y="20" width="350" height="750"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text" base64-UTF8="YES">
+0J/RgNCw0LLQuNC70LAg0LjQs9GA0YsKCiAKQWxpYXM6INCh0LrQsNC20Lgg0LjQvdCw0YfQtQoK0JIg
+0LjQs9GA0YMg0LjQs9GA0LDRjtGCINC60L7QvNCw0L3QtNCw0LzQuCDQuNC3INC00LLRg9GFINC40LvQ
+uCDQsdC+0LvQtdC1CtGH0LXQu9C+0LLQtdC6LiDQl9Cw0LTQsNGH0LAg0LrQsNC20LTQvtCz0L4g0LjQ
+s9GA0L7QutCwINC60L7QvNCw0L3QtNGLIC0K0L7QsdGK0Y/RgdC90LjRgtGMINC60LDQuiDQvNC+0LbQ
+vdC+INCx0L7Qu9GM0YjQtSDRgdC70L7QsgrQvtGC0L7QsdGA0LDQttCw0LXQvNGL0YUg0L3QsCDRjdC6
+0YDQsNC90LUg0LfQsCDQvtCz0YDQsNC90LjRh9C10L3QvdC+0LUK0LLRgNC10LzRjyDQtNGA0YPQs9C4
+0LzQuCDRgdC70L7QstCw0LzQuCwg0LjRgdC/0L7Qu9GM0LfRg9GPLArQvdCw0L/RgNC40LzQtdGALCDR
+gdC40L3QvtC90LjQvNGLLCDQsNC90YLQvtC90LjQvNGLINC4INC/0L7QtNGB0LrQsNC30LrQuArRgtCw
+0LosINGH0YLQvtCx0Ysg0YfQu9C10L3RiyDQstCw0YjQtdC5INC60L7QvNCw0L3QtNGLINGB0LzQvtCz
+0LvQuArQvtGC0LPQsNC00LDRgtGMINC60LDQuiDQvNC+0LbQvdC+INCx0L7Qu9GM0YjQtSDRgdC70L7Q
+siDQv9GA0LXQttC00LUK0YfQtdC8INC40YHRgtC10YfQtdGCINCy0YDQtdC80Y8uINCn0LXQvCDQsdC+
+0LvRjNGI0LUg0YHQu9C+0LIK0L7RgtCz0LDQtNCw0LvQsCDQutC+0LzQsNC90LTQsCwg0YLQtdC8INCx
+0L7Qu9GM0YjQtSDQvtC90LAK0LfQsNGA0LDQsdC+0YLQsNC10YIg0LHQsNC70LvQvtCyLgoK0J7QsdGK
+0Y/RgdC90LXQvdC40LUg0YHQu9C+0LIKCtCf0YDQuCDQvtCx0YrRj9GB0L3QtdC90LjQuCDRgdC70L7Q
+siDQvdC10LvRjNC30Y8g0YPQv9C+0LzQuNC90LDRgtGMCtC60LDQutGD0Y4t0LvQuNCx0L4g0YfQsNGB
+0YLRjCDRgdC70L7QstCwLiDQndCw0L/RgNC40LzQtdGALCDRgdC70L7QstC+CsKr0LrQvtGE0LXQstCw
+0YDQutCwwrsg0L3QtdC70YzQt9GPINC+0LHRitGP0YHQvdGP0YLRjCDQutCw0LogwqvQsNC/0L/QsNGA
+0LDRggrQtNC70Y8g0LLQsNGA0LrQuCDQutC+0YTQtcK7LiDQn9GA0LDQstC40LvRjNC90YvQuSDRgdC/
+0L7RgdC+0LEK0L7QsdGK0Y/RgdC90LXQvdC40Y8g0LHRg9C00LXRgiDRgdC70LXQtNGD0Y7RidC40Lk6
+IMKr0LDQv9C/0LDRgNCw0YIg0LTQu9GPCtC/0YDQuNCz0L7RgtC+0LLQu9C10L3QuNGPINC60YDQtdC/
+0LrQvtCz0L4g0L3QsNC/0LjRgtC60LAsINC60L7RgtC+0YDRi9C5CtC+0LHRi9GH0L3QviDQv9GM0Y7R
+giDQt9CwINC30LDQstGC0YDQsNC60L7QvMK7LiDQnNC+0LbQvdC+CtC40YHQv9C+0LvRjNC30L7QstCw
+0YLRjCDRgdC40L3QvtC90LjQvNGLIC0g0YLQviDQtdGB0YLRjCDQstGLINC80L7QttC10YLQtQrRgdC6
+0LDQt9Cw0YLRjCDCq9C60LjQv9GP0YLQuNGC0YzCuywg0L3QviDQvdC1IMKr0LLQsNGA0LjRgtGMwrsu
+CgrQktGLINC80L7QttC10YLQtSDQuNGB0L/QvtC70YzQt9C+0LLQsNGC0Ywg0LDQvdGC0L7QvdC40LzR
+iy4g0KHQu9C+0LLQvgrCq9Cx0L7Qu9GM0YjQvtC5wrsg0LzQvtC20LXRgiDQsdGL0YLRjCDQvtCx0YrR
+j9GB0L3QtdC90L4g0LrQsNC6CsKr0LDQvdGC0L7QvdC40Lwg0YHQu9C+0LLQsCDQvNCw0LvQtdC90YzQ
+utC40LnCuy4g0JLRiyDQvdC1INC80L7QttC10YLQtQrQuNGB0L/QvtC70YzQt9C+0LLQsNGC0Ywg0LjQ
+vdC+0YHRgtGA0LDQvdC90YvQtSDRj9C30YvQutC4LCDQt9CwCtC40YHQutC70Y7Rh9C10L3QuNC10Lwg
+0YLQtdGFINGB0LvRg9GH0LDQtdCyLCDQutC+0LPQtNCwINCy0YHQtSDQuNCz0YDQvtC60LgK0YHQvtCz
+0LvQsNGB0LjQu9C40YHRjCDRgSDRjdGC0LjQvC4KCtCe0YLQs9Cw0LTQsNC90L3QvtC1INGB0LvQvtCy
+0L4g0LTQvtC70LbQvdC+INGC0L7Rh9C90L4g0YHQvtCy0L/QsNC00LDRgtGMLgrQntCx0YrRj9GB0L3R
+j9GO0YnQuNC5INC40LPRgNC+0Log0L/QvtC80L7Qs9Cw0LXRggrQvtGC0LPQsNC00YvQstCw0Y7RidC4
+0Lwg0L3QsNC50YLQuCDQv9GA0LDQstC40LvRjNC90YPRjiDRhNC+0YDQvNGDCtGB0LvQvtCy0LAuINCV
+0YHQu9C4INGB0LvQvtCy0L4g0YHQvtGB0YLQvtC40YIg0LjQtyDQtNCy0YPRhSDRh9Cw0YHRgtC10Lkg
+0LgK0LrRgtC+LdGC0L4g0L7RgtCz0LDQtNGL0LLQsNC10YIg0L/QtdGA0LLRg9GOINGH0LDRgdGC0Yws
+INCy0Ysg0L/QvtGC0L7QvArQvNC+0LbQtdGC0LUg0LjRgdC/0L7Qu9GM0LfQvtCy0LDRgtGMINGN0YLR
+gyDRh9Cw0YHRgtGMINGB0LvQvtCy0LAg0LIK0LTQsNC70YzQvdC10LnRiNC10Lwg0L7QsdGK0Y/RgdC9
+0LXQvdC40LguCgrQndCw0YfQuNGB0LvQtdC90LjQtSDQvtGH0LrQvtCyCgrQl9CwINC60LDQttC00L7Q
+tSDQvtGC0LPQsNC00LDQvdC90L7QtSDRgdC70L7QstC+INC60L7QvNCw0L3QtNCwCtC/0L7Qu9GD0YfQ
+sNC10YIg0L7QtNC90L4g0L7Rh9C60L4sINCwINC30LAg0L/RgNC+0L/Rg9GJ0LXQvdC90L7QtSDQuNC7
+0LgK0L7RgtCz0LDQtNCw0L3QvdC+0LUg0YEg0L3QsNGA0YPRiNC10L3QuNC10LwgLSDRiNGC0YDQsNGE
+0YPQtdGC0YHRjyAo0LIK0LfQsNCy0LjRgdC40LzQvtGB0YLQuCDQvtGCINC90LDRgdGC0YDQvtC10Lop
+LgoK0JXRgdC70Lgg0L7QsdGK0Y/RgdC90Y/RjtGJ0LjQuSDQuNCz0YDQvtC6INC00L7Qv9GD0YHQutCw
+0LXRgiDQvtGI0LjQsdC60YMgLQrQvdCw0L/RgNC40LzQtdGALCDQvdCw0LfRi9Cy0LDQtdGCINGH0LDR
+gdGC0Ywg0YHQu9C+0LLQsCwg0YPQutCw0LfQsNC90L3QvtCz0L4K0LIg0LrQsNGA0YLQvtGH0LrQtSwg
+0YHQu9C+0LLQviDQvdC1INCx0YPQtNC10YIg0L/RgNC40L3Rj9GC0L4g0LgK0LrQvtC80LDQvdC00LAg
+0L/QvtGC0LXRgNGP0LXRgiAxINC+0YfQutC+LiDQn9C+0Y3RgtC+0LzRgyDQutCw0LbQtNCw0Y8K0LrQ
+vtC80LDQvdC00LAg0LTQvtC70LbQvdCwINCy0L3QuNC80LDRgtC10LvRjNC90L4g0YHQu9GD0YjQsNGC
+0YwK0L7QsdGK0Y/RgdC90LXQvdC40Y8g0LTRgNGD0LPQuNGFINC60L7QvNCw0L3QtC4g0JXRgdC70Lgg
+0YHQu9C+0LLQvgrQutCw0LbQtdGC0YHRjyDRgdC70LjRiNC60L7QvCDRgtGP0LbQtdC70YvQvCwg0LLR
+iyDQvNC+0LbQtdGC0LUg0LXQs9C+CtC/0YDQvtC/0YPRgdGC0LjRgtGMLCDQvdC+INC/0L7QvNC90LjR
+gtC1LCDRh9GC0L4g0LfQsCDRjdGC0L4g0LLRiwrQv9C+0YLQtdGA0Y/QtdGC0LUg0L7Rh9C60LguINCe
+0LTQvdCw0LrQviwg0LjQvdC+0LPQtNCwINGN0YLQviDRgtC+0LPQvgrRgdGC0L7QuNGCLCDRgtCw0Log
+0LrQsNC6INCy0Ysg0LzQvtC20LXRgtC1INGB0Y3QutC+0L3QvtC80LjRgtGMINCy0YDQtdC80Y8uCgoi
+0J/QvtGB0LvQtdC00L3QtdC1INGB0LvQvtCy0L4g0LTQu9GPINCy0YHQtdGFIiAtINC10YHQu9C4INCy
+0LrQu9GO0YfQtdC90LAK0Y3RgtCwINC+0L/RhtC40Y8sINC/0L4g0LjRgdGC0LXRh9C10L3QuNC4INCy
+0YDQtdC80LXQvdC4INGA0LDRg9C90LTQsCwK0YHQu9C+0LLQviDQvNC+0LPRg9GCINC+0YLQs9Cw0LTR
+i9Cy0LDRgtGMINCy0YHQtSDQutC+0LzQsNC90LTRiy4g0JIK0Y3RgtC+0Lwg0YHQu9GD0YfQsNC1IDEg
+0L7Rh9C60L4g0L/QvtC70YPRh9C40YIg0LrQvtC80LDQvdC00LAK0L7RgtCz0LDQtNCw0LLRiNC10LUg
+0YHQu9C+0LLQvi4KCtCf0L7QsdC10LTQuNGC0LXQu9C10Lwg0YHRh9C40YLQsNC10YLRgdGPINC60L7Q
+vNCw0L3QtNCwLCDQvdCw0LHRgNCw0LLRiNCw0Y8K0L3QtdC+0LHRhdC+0LTQuNC80L7QtSDQtNC70Y8g
+0L/QvtCx0LXQtNGLINC60L7Qu9C40YfQtdGB0YLQstC+INC+0YfQutC+0LIuCtCV0YHQu9C4INC90LAg
+0LzQvtC80LXQvdGCINC30LDQstC10YDRiNC10L3QuNGPINC/0L7QsdC10LTQvdC+0LPQvgrRgNCw0YPQ
+vdC00LAg0YMg0LrQvtC80LDQvdC0INC+0LTQuNC90LDQutC+0LLQvtC1INC60L7Qu9C40YfQtdGB0YLQ
+stC+CtC+0YfQutC+0LIgLSDQv9GA0L7QstC+0LTQuNGC0YzRgdGPINC00L7Qv9C+0LvQvdC40YLQtdC7
+0YzQvdGL0Lkg0YDQsNGD0L3QtAoo0J7QstC10YDRgtCw0LnQvCkuCgrQl9Cw0LTQsNC90LjRjwoK0JXR
+gdC70Lgg0LIg0YDQsNGD0L3QtNC1INC10YHRgtGMINC30LDQtNCw0L3QuNC1IC0g0LrQvtC80LDQvdC0
+0LAg0LzQvtC20LXRggrQv9C+0LvRg9GH0LjRgtGMINCx0L7QvdGD0YHQvdGL0LUg0LHQsNC70Ysg0LfQ
+sCDQtdCz0L4g0LLRi9C/0L7Qu9C90LXQvdC40LUuCgrQldGB0LvQuCDQstCw0Lwg0YPQtNCw0YHRgtGB
+0Y8g0L7QsdGK0Y/RgdC90LjRgtGMINCy0YHQtSDRgdC70L7QstCwINCyCtGB0L7QvtGC0LLQtdGC0YHR
+gtCy0LjQuCDRgSDQt9Cw0LTQsNC90LjQtdC8LCDRgtC+INCy0LDRiNCwINC60L7QvNCw0L3QtNCwCtC/
+0L7Qu9GD0YfQsNC10YIg0LHQvtC90YPRgdC90YvQtSDQvtGH0LrQuCwg0L3QviDRgtC+0LvRjNC60L4g
+0LXRgdC70LgK0LTRgNGD0LPQuNC1INC60L7QvNCw0L3QtNGLINGB0YfQuNGC0LDRjtGCINCy0LDRiNC1
+INCy0YvQv9C+0LvQvdC10L3QuNC1CtGD0LHQtdC00LjRgtC10LvRjNC90YvQvC4g0JrQvtC70LjRh9C1
+0YHRgtCy0L4g0LHQvtC90YPRgdC90YvRhSDQsdCw0LvQvtCyCtC+0L/RgNC10LTQtdC70Y/QtdGC0YHR
+jyDRgdC70YPRh9Cw0LnQvdC+INCyINC40L3RgtC10YDQstCw0LvQtSDQvtGCIDcg0LTQvgoxMC4KCtCj
+0LTQsNGH0LghCgw
+</string>
+                                <color key="textColor" systemColor="labelColor"/>
+=======
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ПРАВИЛА игры" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NrM-RZ-V2A">
+                                <rect key="frame" x="20" y="54" width="388" height="818"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" name="AccentColor"/>
+>>>>>>> main
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="irn-ds-wV6"/>
+                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="irn-ds-wV6" firstAttribute="bottom" secondItem="NrM-RZ-V2A" secondAttribute="bottom" constant="20" id="2C7-aH-hHj"/>
+                            <constraint firstItem="NrM-RZ-V2A" firstAttribute="centerX" secondItem="LvF-mo-Yww" secondAttribute="centerX" id="5lM-9m-dwe"/>
+                            <constraint firstItem="irn-ds-wV6" firstAttribute="trailing" secondItem="NrM-RZ-V2A" secondAttribute="trailing" constant="20" id="It8-LK-7kH"/>
+                            <constraint firstItem="NrM-RZ-V2A" firstAttribute="centerY" secondItem="LvF-mo-Yww" secondAttribute="centerY" id="aBV-eD-TQc"/>
+                            <constraint firstItem="NrM-RZ-V2A" firstAttribute="leading" secondItem="irn-ds-wV6" secondAttribute="leading" constant="20" id="hy0-p6-GZB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rBQ-VM-lCt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwh-fq-WXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="856"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="1HS-be-vcP">
+            <size key="intrinsicContentSize" width="96" height="42"/>
+        </designable>
+        <designable name="2ex-Or-YFf">
+            <size key="intrinsicContentSize" width="82" height="31"/>
+        </designable>
+        <designable name="4fm-cE-aOM">
+            <size key="intrinsicContentSize" width="67" height="31"/>
+        </designable>
+        <designable name="LjQ-bB-eWZ">
+            <size key="intrinsicContentSize" width="51" height="42"/>
+        </designable>
+        <designable name="VdW-Vc-D1V">
+            <size key="intrinsicContentSize" width="66.333333333333329" height="31"/>
+        </designable>
+        <designable name="fAV-2Q-SMY">
+            <size key="intrinsicContentSize" width="68.333333333333329" height="31"/>
+        </designable>
+        <designable name="jnO-5b-rmE">
+            <size key="intrinsicContentSize" width="66.666666666666671" height="31"/>
+        </designable>
+        <designable name="rPM-MO-2B9">
+            <size key="intrinsicContentSize" width="81" height="42"/>
+        </designable>
+        <designable name="zOV-2u-P2A">
+            <size key="intrinsicContentSize" width="71" height="31"/>
+        </designable>
+    </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="q0x-VE-kTP"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Background-Bubbles" width="352" height="102"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
