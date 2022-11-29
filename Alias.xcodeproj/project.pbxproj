@@ -16,6 +16,8 @@
 		278513D8282031ED004924D0 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513D7282031ED004924D0 /* RulesViewController.swift */; };
 		278513DA28203226004924D0 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513D928203226004924D0 /* ChoiceViewController.swift */; };
 		278513DC28203250004924D0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513DB28203250004924D0 /* GameViewController.swift */; };
+		D5F64A552936492900A5BE6D /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5F64A542936492900A5BE6D /* ResultView.xib */; };
+		D5F64A5929364C4600A5BE6D /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F64A5829364C4600A5BE6D /* ResultView.swift */; };
 		D9045F302825AFA5001A8A16 /* russian_words_nouns.csv in Resources */ = {isa = PBXBuildFile; fileRef = D906AD492825A68100DFC524 /* russian_words_nouns.csv */; };
 		D9045F322825B234001A8A16 /* sport_words_nouns.csv in Resources */ = {isa = PBXBuildFile; fileRef = D9045F312825B233001A8A16 /* sport_words_nouns.csv */; };
 		D9045F342825B36E001A8A16 /* random_words_nouns.csv in Resources */ = {isa = PBXBuildFile; fileRef = D9045F332825B36E001A8A16 /* random_words_nouns.csv */; };
@@ -47,6 +49,8 @@
 		278513D7282031ED004924D0 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		278513D928203226004924D0 /* ChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		278513DB28203250004924D0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D5F64A542936492900A5BE6D /* ResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
+		D5F64A5829364C4600A5BE6D /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		D9045F312825B233001A8A16 /* sport_words_nouns.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sport_words_nouns.csv; sourceTree = "<group>"; };
 		D9045F332825B36E001A8A16 /* random_words_nouns.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = random_words_nouns.csv; sourceTree = "<group>"; };
 		D906AD492825A68100DFC524 /* russian_words_nouns.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = russian_words_nouns.csv; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				278513D0281FDA56004924D0 /* Controller */,
 				278513C0281FC555004924D0 /* Main.storyboard */,
 				DA6889C7282456A6005C89D9 /* GradientBorderButton.swift */,
+				D5F64A542936492900A5BE6D /* ResultView.xib */,
+				D5F64A5829364C4600A5BE6D /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +260,7 @@
 				D9045F322825B234001A8A16 /* sport_words_nouns.csv in Resources */,
 				278513C4281FC557004924D0 /* Assets.xcassets in Resources */,
 				D9070E392826909200825BBB /* rightSound.mp3 in Resources */,
+				D5F64A552936492900A5BE6D /* ResultView.xib in Resources */,
 				278513C2281FC555004924D0 /* Main.storyboard in Resources */,
 				DA9B3A022823CD18009BA30A /* swift_words_nouns.csv in Resources */,
 				D9045F302825AFA5001A8A16 /* russian_words_nouns.csv in Resources */,
@@ -279,6 +286,7 @@
 				DA9B39FE2823CD01009BA30A /* WordStore.swift in Sources */,
 				278513D8282031ED004924D0 /* RulesViewController.swift in Sources */,
 				DAB8B364282294A500ABA6D0 /* Joke.swift in Sources */,
+				D5F64A5929364C4600A5BE6D /* ResultView.swift in Sources */,
 				278513DC28203250004924D0 /* GameViewController.swift in Sources */,
 				278513BD281FC555004924D0 /* SceneDelegate.swift in Sources */,
 				D9B52F562826EAEC00A4296B /* RandomAction.swift in Sources */,

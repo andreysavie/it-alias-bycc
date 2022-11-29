@@ -21,7 +21,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var incorrectButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var progress: UIProgressView!
-
+    @IBOutlet weak var closeButton: UIButton!
+    
     var sound = SoundBrain()
     var randomAction = RandomAction()
     var topic = "russian_words_nouns" {
@@ -30,7 +31,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    var roundDuration = 60
+    var roundDuration = 5 // 60
     
     var status: Status = .waiting { didSet { statusUpdater() } }
     
@@ -51,6 +52,27 @@ class GameViewController: UIViewController {
         showWord()
         timeRemaining = roundDuration // pausedTimeRemaining
         restartTimer()
+        
+    }
+    
+    private func showResultView() {
+        // score view
+        if let myView = Bundle.main.loadNibNamed("ResultView", owner: nil, options: nil)?.first as? ResultView {
+            myView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+            myView.center = self.view.center
+            let desc = score == 1 ? "word" : "words"
+            myView.scoreLabel?.text = String(format: "Score: %d %@", score, desc)
+            
+            // background blur
+            let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = view.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            view.addSubview(blurEffectView)
+            view.addSubview(myView)
+            view.bringSubviewToFront(closeButton)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +103,7 @@ class GameViewController: UIViewController {
             correctButton.alpha = 0.5
             incorrectButton.alpha = 0.5
             skipButton.alpha = 0.5
+            showResultView()
         }
     }
 
@@ -142,8 +165,7 @@ class GameViewController: UIViewController {
         status = .waiting
         showWord()
         enableAnswerButtons()
-//        animateBackgroundChanged(for: correctButton, to: UIColor(named: "MainColor") ?? .white)
-//        animateBackgroundChanged(for: incorrectButton, to: UIColor(named: "MainColor") ?? .white)
+
     }
     
     @IBAction func closePressed() {
@@ -154,7 +176,7 @@ class GameViewController: UIViewController {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
 //            self.statusUpdater(self.status)
-            if self.timeRemaining == 0 {
+            if self.timeRemaining < 1 {
                 timer.invalidate()
                 self.status = .elapsed
             }

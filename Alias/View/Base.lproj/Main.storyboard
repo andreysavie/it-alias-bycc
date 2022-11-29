@@ -409,6 +409,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="AAY-ne-cBG"/>
                     <connections>
+                        <outlet property="closeButton" destination="tjc-pG-yek" id="jVd-Az-mbs"/>
                         <outlet property="correctButton" destination="rPM-MO-2B9" id="UCe-sz-Y8w"/>
                         <outlet property="incorrectButton" destination="1HS-be-vcP" id="EML-1P-eiZ"/>
                         <outlet property="progress" destination="c2K-dd-ueR" id="II4-B8-ccE"/>
@@ -601,9 +602,6 @@ stGL0L/QvtC70L3QtdC90LjQtQrRg9Cx0LXQtNC40YLQtdC70YzQvdGL0LwuINCa0L7Qu9C40YfQtdGB
         </scene>
     </scenes>
     <designables>
-        <designable name="1HS-be-vcP">
-            <size key="intrinsicContentSize" width="106" height="42"/>
-        </designable>
         <designable name="2ex-Or-YFf">
             <size key="intrinsicContentSize" width="65" height="42"/>
         </designable>
@@ -618,12 +616,6 @@ stGL0L/QvtC70L3QtdC90LjQtQrRg9Cx0LXQtNC40YLQtdC70YzQvdGL0LwuINCa0L7Qu9C40YfQtdGB
         </designable>
         <designable name="jnO-5b-rmE">
             <size key="intrinsicContentSize" width="118" height="55"/>
-        </designable>
-        <designable name="nVk-G1-izO">
-            <size key="intrinsicContentSize" width="52" height="42"/>
-        </designable>
-        <designable name="rPM-MO-2B9">
-            <size key="intrinsicContentSize" width="89" height="42"/>
         </designable>
         <designable name="zOV-2u-P2A">
             <size key="intrinsicContentSize" width="50" height="42"/>
