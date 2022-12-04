@@ -31,6 +31,9 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func startButton(_ sender: UIButton) {
+        
+        SettingsManager.shared.numOfWords = Int(self.wordsSliderOutlet.value)
+        SettingsManager.shared.timeOfRound = Int(self.roundSliderOutlet.value)
     }
     
     public var topic = ""
@@ -74,7 +77,7 @@ class SettingsViewController: UIViewController {
         guard let vc = segue.destination as? GameViewController else { return }
         vc.topic = topic
         vc.winScore = Int(wordsSliderOutlet.value)
-        vc.roundDuration = 5 //Int(roundSliderOutlet.value)
+        vc.roundDuration = Int(roundSliderOutlet.value)
     }
     
     func reloadValues() {
@@ -121,6 +124,7 @@ class SettingsViewController: UIViewController {
         }
         let action = UIAlertAction(title: "Done", style: .default) { [weak self] _ in
             let text = alert.textFields?.first?.text
+            guard text != "" else { return }
             SettingsManager.shared.teamOneName = text ?? ""
             self?.reloadValues()
         }
@@ -135,6 +139,7 @@ class SettingsViewController: UIViewController {
         }
         let action = UIAlertAction(title: "Done", style: .default) { [weak self] _ in
             let text = alert.textFields?.first?.text
+            guard text != "" else { return }
             SettingsManager.shared.teamTwoName = text ?? ""
             self?.reloadValues()
         }
