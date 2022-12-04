@@ -11,11 +11,23 @@ enum Status: CaseIterable {
     case correct, incorrect, elapsed, waiting, skip
 }
 
+enum TeamType {
+    case teamOne
+    case teamTwo
+}
+
+struct Team {
+    var type: TeamType
+    var name: String
+    var score: Int = 0
+    var rounds: Int = 0
+}
+
 class GameViewController: UIViewController {
     
     @IBOutlet weak var timeRemainingLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var correctButton: UIButton!
     @IBOutlet weak var incorrectButton: UIButton!
@@ -31,37 +43,63 @@ class GameViewController: UIViewController {
         }
     }
     
-    var roundDuration = 5 // 60
+    var teams = [Team]()
+    
+    var currentTeam: Team?
+    var winner: Team? = nil
+    
+    var roundDuration = 5 // SettingsManager.shared.timeOfRound
+    
+    var winScore = SettingsManager.shared.numOfWords
     
     var status: Status = .waiting { didSet { statusUpdater() } }
     
-    
-    var score: Int = 0 {
-        didSet {
-            scoreLabel.text = "Score: \(score)"
-        }
-    }
+    private var score: Int = 0 { didSet { scoreLabel.text = "Score: \(score)" } }
     private var timeRemaining = 60 { didSet { self.updateTimeRemainingLabel()  } }
-    // private var pausedTimeRemaining = 60
     private var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        restartGame()
+        
+        teams.append(Team(type: .teamOne, name: SettingsManager.shared.teamOneName))
+        teams.append(Team(type: .teamTwo, name: SettingsManager.shared.teamTwoName))
+        
+        self.currentTeam = teams.first
+    }
+    
+   @objc private func restartGame() {
+       
+       guard self.winner == nil else { self.dismiss(animated: true); return }
+       
         progress.progress = 1
         WordStore.shared.setWords(by: topic)
         showWord()
         timeRemaining = roundDuration // pausedTimeRemaining
         restartTimer()
-        
+       
+       currentTeam = currentTeam?.type == .teamOne
+       ? teams.first(where: {$0.type == .teamTwo} )
+       : teams.first(where: {$0.type == .teamOne} )
+       
+       self.status = .waiting
+       self.score = currentTeam?.score ?? 0
+       
+       self.enableAnswerButtons()
+
+       self.resultView.removeFromSuperview()
+       
     }
     
-    private func showResultView() {
+    private lazy var resultView: UIView = {
+        let resultView = UIView(frame: self.view.frame)
         // score view
-        if let myView = Bundle.main.loadNibNamed("ResultView", owner: nil, options: nil)?.first as? ResultView {
-            myView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-            myView.center = self.view.center
+        if let scoreView = Bundle.main.loadNibNamed("ResultView", owner: nil, options: nil)?.first as? ResultView {
+            scoreView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+            scoreView.center = self.view.center
             let desc = score == 1 ? "word" : "words"
-            myView.scoreLabel?.text = String(format: "Score: %d %@", score, desc)
+            scoreView.scoreLabel?.text = String(format: "Score: %d %@", self.currentTeam?.score ?? 0, desc)
             
             // background blur
             let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
@@ -69,11 +107,20 @@ class GameViewController: UIViewController {
             blurEffectView.frame = view.bounds
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
-            view.addSubview(blurEffectView)
-            view.addSubview(myView)
-            view.bringSubviewToFront(closeButton)
+            let continueButton = UIButton(frame: CGRect(x: scoreView.frame.minX, y: scoreView.frame.maxY + 16, width: scoreView.frame.width, height: 50))
+            continueButton.setTitle("Continue", for: .normal)
+            continueButton.backgroundColor = .white
+            continueButton.cornerRadius = 16
+            continueButton.setTitleColor(.black, for: .normal)
+            continueButton.isUserInteractionEnabled = true
+            continueButton.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
+            
+            resultView.addSubview(blurEffectView)
+            resultView.addSubview(scoreView)
+            resultView.addSubview(continueButton)
         }
-    }
+       return resultView
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         status = .waiting
@@ -82,28 +129,42 @@ class GameViewController: UIViewController {
     private func statusUpdater() {
         // pausedTimeRemaining = timeRemaining
         switch self.status {
+            
         case .correct:
             disableAnswerButtons()
             animateBackgroundChanged(for: correctButton, to: .systemGreen.withAlphaComponent(0.5), with: UIColor(named: "MainColor") ?? .white)
-            statusLabel.text = "Correct"
+            
         case .incorrect:
             disableAnswerButtons()
             animateBackgroundChanged(for: incorrectButton, to: .systemRed.withAlphaComponent(0.5), with: UIColor(named: "MainColor") ?? .white)
-            statusLabel.text = "Incorrect"
+            
         case .skip:
             disableAnswerButtons()
             animateBackgroundChanged(for: skipButton, to: .white.withAlphaComponent(0.5), with: UIColor(named: "MainColor") ?? .white)
-            statusLabel.text = "Skiped"
+            
         case .waiting:
-            statusLabel.text = " "
-//            timeRemainingLabel.text = "Time remaining: \(timeRemaining)"
+            self.teamNameLabel.text = self.currentTeam?.name
+            
         case .elapsed:
             disableAnswerButtons()
             timeRemainingLabel.text = "Time elapsed"
             correctButton.alpha = 0.5
             incorrectButton.alpha = 0.5
             skipButton.alpha = 0.5
-            showResultView()
+            
+            view.addSubview(resultView)
+            view.bringSubviewToFront(closeButton)
+            
+            currentTeam?.score = self.score
+            currentTeam?.rounds += 1
+            
+            let index = teams.firstIndex(where: { $0.type == currentTeam?.type })
+            teams[index ?? 0] = currentTeam!
+                        
+            if let winner = teams.first(where: { $0.score > self.winScore }) {
+                print ( "\(winner.name) is winner with score \(winner.score)!")
+                self.winner = winner
+            }
         }
     }
 

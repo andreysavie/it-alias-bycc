@@ -31,16 +31,15 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func startButton(_ sender: UIButton) {
-        SettingsManager.shared.numOfWords = wordsSliderOutlet.value
-        SettingsManager.shared.timeOfRound = roundSliderOutlet.value
-        self.dismiss(animated: true)
     }
     
+    public var topic = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        wordsSliderOutlet.value = SettingsManager.shared.numOfWords
-        roundSliderOutlet.value = SettingsManager.shared.timeOfRound
+        wordsSliderOutlet.value = Float(SettingsManager.shared.numOfWords)
+        roundSliderOutlet.value = Float(SettingsManager.shared.timeOfRound)
 
         let taskGesture = UITapGestureRecognizer()
         taskGesture.addTarget(self, action: #selector(tasksCheckmarkAction))
@@ -62,18 +61,27 @@ class SettingsViewController: UIViewController {
         teamTwoGesture.addTarget(self, action: #selector(teamTwoAction))
         teamTwo.addGestureRecognizer(teamTwoGesture)
 
-
         tasksCheckmark.isUserInteractionEnabled = true
         penaltyCheckmark.isUserInteractionEnabled = true
         soundsCheckmark.isUserInteractionEnabled = true
         teamOne.isUserInteractionEnabled = true
         teamTwo.isUserInteractionEnabled = true
 
-
         reloadValues()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? GameViewController else { return }
+        vc.topic = topic
+        vc.winScore = Int(wordsSliderOutlet.value)
+        vc.roundDuration = 5 //Int(roundSliderOutlet.value)
+    }
+    
     func reloadValues() {
+                
+        teamOne.text = SettingsManager.shared.teamOneName
+        teamTwo.text = SettingsManager.shared.teamTwoName
+
         self.numberOfWords.text = String(format: "%d", Int(wordsSliderOutlet.value))
         self.numberOfRound.text = String(format: "%d", Int(roundSliderOutlet.value))
         
@@ -111,9 +119,10 @@ class SettingsViewController: UIViewController {
         alert.addTextField { (textField) in
             textField.placeholder = "First team name"
         }
-        let action = UIAlertAction(title: "Done", style: .default) { _ in
+        let action = UIAlertAction(title: "Done", style: .default) { [weak self] _ in
             let text = alert.textFields?.first?.text
-            self.teamOne.text = text
+            SettingsManager.shared.teamOneName = text ?? ""
+            self?.reloadValues()
         }
         alert.addAction(action)
         self.present(alert, animated: true)
@@ -124,12 +133,15 @@ class SettingsViewController: UIViewController {
         alert.addTextField { (textField) in
             textField.placeholder = "Second team name"
         }
-        let action = UIAlertAction(title: "Done", style: .default) { _ in
+        let action = UIAlertAction(title: "Done", style: .default) { [weak self] _ in
             let text = alert.textFields?.first?.text
-            self.teamTwo.text = text
+            SettingsManager.shared.teamTwoName = text ?? ""
+            self?.reloadValues()
         }
         alert.addAction(action)
         self.present(alert, animated: true)
     }
     
 }
+
+

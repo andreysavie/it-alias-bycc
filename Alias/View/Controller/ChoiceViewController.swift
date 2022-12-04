@@ -38,7 +38,7 @@ class ChoiceViewController: UIViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let vc = segue.destination as? GameViewController else { return }
+        guard let vc = segue.destination as? SettingsViewController else { return }
         vc.topic = selectedFilePath
     }
     @IBAction func closePressed(_ sender: UIButton) {
