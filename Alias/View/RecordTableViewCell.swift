@@ -38,5 +38,18 @@ class RecordTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    public func configure(record: RecordTeamsEntity) {
+        
+        let winnerScore = record.winner?.score
+        let looserScore = record.looser?.score
+
+        self.winnerNameLabel.text = record.winner?.name
+        self.loosnerNameLabel.text = record.looser?.name
+        self.winnerScoreLabel.text = String(format: "Score: %d", winnerScore ?? 0)
+        self.looserScoreLabel.text = String(format: "Score: %d", looserScore ?? 0)
+        self.winnerAvatar.image = UIImage(systemName: record.winner?.avatar ?? "person.2.circle.fill")
+        self.looserAvatar.image = UIImage(systemName: record.looser?.avatar ?? "person.2.circle.fill")
+    }
 
 }

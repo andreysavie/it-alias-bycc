@@ -18,6 +18,9 @@
 		278513DC28203250004924D0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513DB28203250004924D0 /* GameViewController.swift */; };
 		D538AE1B29392C8A003386A7 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538AE1A29392C8A003386A7 /* SettingsManager.swift */; };
 		D538AE1D293933EF003386A7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538AE1C293933EF003386A7 /* SettingsViewController.swift */; };
+		D53B3C60293D28FB00C632BB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B3C5F293D28FB00C632BB /* CoreDataStack.swift */; };
+		D53B3C62293D291700C632BB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B3C61293D291700C632BB /* CoreDataManager.swift */; };
+		D53B3C66293D298C00C632BB /* RecordTeamModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D53B3C64293D298C00C632BB /* RecordTeamModel.xcdatamodeld */; };
 		D55234F9293CC81200D63041 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55234F8293CC81100D63041 /* RecordsViewController.swift */; };
 		D55234FB293CC92E00D63041 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55234FA293CC92E00D63041 /* RecordTableViewCell.swift */; };
 		D55234FD293CC95400D63041 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55234FC293CC95400D63041 /* RecordCell.xib */; };
@@ -56,6 +59,9 @@
 		278513DB28203250004924D0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D538AE1A29392C8A003386A7 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		D538AE1C293933EF003386A7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D53B3C5F293D28FB00C632BB /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D53B3C61293D291700C632BB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D53B3C65293D298C00C632BB /* RecordTeamModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecordTeamModel.xcdatamodel; sourceTree = "<group>"; };
 		D55234F8293CC81100D63041 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		D55234FA293CC92E00D63041 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		D55234FC293CC95400D63041 /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				278513C8281FC557004924D0 /* Info.plist */,
 				D9070E372826909200825BBB /* rightSound.mp3 */,
 				D9070E382826909200825BBB /* skipWordSound.mp3 */,
+				D53B3C63293D293E00C632BB /* CoreData */,
 			);
 			path = Alias;
 			sourceTree = "<group>";
@@ -153,6 +160,16 @@
 				D55234F8293CC81100D63041 /* RecordsViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D53B3C63293D293E00C632BB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D53B3C5F293D28FB00C632BB /* CoreDataStack.swift */,
+				D53B3C61293D291700C632BB /* CoreDataManager.swift */,
+				D53B3C64293D298C00C632BB /* RecordTeamModel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		D9070E3628268A0F00825BBB /* Model */ = {
@@ -292,10 +309,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9070E3528268A0300825BBB /* SoundBrain.swift in Sources */,
+				D53B3C60293D28FB00C632BB /* CoreDataStack.swift in Sources */,
 				DA6889CC282456C3005C89D9 /* UIView+Border.swift in Sources */,
 				DAB8B365282294A500ABA6D0 /* JokeStore.swift in Sources */,
 				278513BF281FC555004924D0 /* ViewController.swift in Sources */,
 				278513BB281FC555004924D0 /* AppDelegate.swift in Sources */,
+				D53B3C66293D298C00C632BB /* RecordTeamModel.xcdatamodeld in Sources */,
+				D53B3C62293D291700C632BB /* CoreDataManager.swift in Sources */,
 				DAB8B366282294A500ABA6D0 /* NetworkManager.swift in Sources */,
 				DA6889C8282456A6005C89D9 /* GradientBorderButton.swift in Sources */,
 				278513DA28203226004924D0 /* ChoiceViewController.swift in Sources */,
@@ -532,6 +552,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D53B3C64293D298C00C632BB /* RecordTeamModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D53B3C65293D298C00C632BB /* RecordTeamModel.xcdatamodel */,
+			);
+			currentVersion = D53B3C65293D298C00C632BB /* RecordTeamModel.xcdatamodel */;
+			path = RecordTeamModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 278513AF281FC555004924D0 /* Project object */;
 }

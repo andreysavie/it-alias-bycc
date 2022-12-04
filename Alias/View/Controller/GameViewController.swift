@@ -173,10 +173,16 @@ class GameViewController: UIViewController {
             let index = teams.firstIndex(where: { $0.type == currentTeam?.type })
             teams[index ?? 0] = currentTeam!
                         
-            if let winner = teams.first(where: { $0.score > self.winScore }) {
+            if let winner = teams.first(where: { $0.score >= self.winScore }) {
                 print ( "\(winner.name) is winner with score \(winner.score)!")
                 self.winner = winner
             }
+            
+            let looser = teams.first(where: { $0.type != winner?.type })
+            
+            guard let winner, let looser else { return }
+                    
+            CoreDataManager.shared.saveRecord(winner: winner, looser: looser)
         }
     }
 

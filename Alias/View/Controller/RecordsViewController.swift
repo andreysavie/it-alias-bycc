@@ -27,23 +27,26 @@ class RecordsViewController: UIViewController {
         presentingViewController?.dismiss(animated: true)
     }
     
-    // TODO: temp mock data
+//    // TODO: temp mock data
+//
+//    var records: [RecordModel] =
+//
+//    [RecordModel(
+//        winnerTeam: Team(type: .teamOne, name: "Winners", score: 15),
+//        looserTeam: Team(type: .teamTwo, name: "Loosers", score: 13)),
+//
+//     RecordModel(
+//        winnerTeam: Team(type: .teamOne, name: "Suckers", score: 25),
+//        looserTeam: Team(type: .teamTwo, name: "Fuckers", score: 12)
+//     )
+//    ]
     
-    var records: [RecordModel] =
-    
-    [RecordModel(
-        winnerTeam: Team(type: .teamOne, name: "Winners", score: 15),
-        looserTeam: Team(type: .teamTwo, name: "Loosers", score: 13)),
-     
-     RecordModel(
-        winnerTeam: Team(type: .teamOne, name: "Suckers", score: 25),
-        looserTeam: Team(type: .teamTwo, name: "Fuckers", score: 12)
-     )
-    ]
+    private var fetchedResultsController = CoreDataManager.shared.fetchedResultsController
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         recordsTableVIew.delegate = self
         recordsTableVIew.dataSource = self
         
@@ -57,32 +60,26 @@ class RecordsViewController: UIViewController {
 extension RecordsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return records.count
+        return fetchedResultsController.sections?.count ?? 0
+
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        let sectionInfo = fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath) as! RecordTableViewCell
+        cell.selectionStyle = .none
         
-        let winnerScore = records[indexPath.section].winnerTeam.score
-        let looserScore = records[indexPath.section].looserTeam.score
+        let record = fetchedResultsController.object(at: indexPath)
 
-        cell.winnerNameLabel.text = records[indexPath.section].winnerTeam.name
-        cell.loosnerNameLabel.text = records[indexPath.section].looserTeam.name
-        
-        cell.winnerScoreLabel.text = String(format: "Score: %d", winnerScore)
-        cell.looserScoreLabel.text = String(format: "Score: %d", looserScore)
-        
-        cell.winnerAvatar.image = UIImage(systemName: records[indexPath.section].winnerTeam.avatar)
-        cell.looserAvatar.image = UIImage(systemName: records[indexPath.section].looserTeam.avatar)
-
+        cell.configure(record: record)
         
         return cell
 
     }
-    
     
 }
 
@@ -96,5 +93,9 @@ extension RecordsViewController: UITableViewDelegate {
         let footerView = UIView()
         footerView.backgroundColor = UIColor.clear
         return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
