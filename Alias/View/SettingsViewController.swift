@@ -22,6 +22,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var wordsSliderOutlet: UISlider!
     @IBOutlet weak var roundSliderOutlet: UISlider!
     
+    
+    @IBAction func closeButton(_ sender: Any) {
+        presentingViewController?.dismiss(animated: true)
+    }
+    
     @IBAction func wordsSlider(_ sender: UISlider) {
         numberOfWords.text = String(format: "%d", Int(sender.value))
     }

@@ -28,6 +28,7 @@ struct Team {
     var name: String
     var score: Int = 0
     var rounds: Int = 0
+    var avatar: String = "person.2.circle.fill"
 }
 
 class GameViewController: UIViewController {

@@ -18,6 +18,9 @@
 		278513DC28203250004924D0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513DB28203250004924D0 /* GameViewController.swift */; };
 		D538AE1B29392C8A003386A7 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538AE1A29392C8A003386A7 /* SettingsManager.swift */; };
 		D538AE1D293933EF003386A7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538AE1C293933EF003386A7 /* SettingsViewController.swift */; };
+		D55234F9293CC81200D63041 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55234F8293CC81100D63041 /* RecordsViewController.swift */; };
+		D55234FB293CC92E00D63041 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55234FA293CC92E00D63041 /* RecordTableViewCell.swift */; };
+		D55234FD293CC95400D63041 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55234FC293CC95400D63041 /* RecordCell.xib */; };
 		D5F64A552936492900A5BE6D /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5F64A542936492900A5BE6D /* ResultView.xib */; };
 		D5F64A5929364C4600A5BE6D /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F64A5829364C4600A5BE6D /* ResultView.swift */; };
 		D9045F302825AFA5001A8A16 /* russian_words_nouns.csv in Resources */ = {isa = PBXBuildFile; fileRef = D906AD492825A68100DFC524 /* russian_words_nouns.csv */; };
@@ -53,6 +56,9 @@
 		278513DB28203250004924D0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D538AE1A29392C8A003386A7 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		D538AE1C293933EF003386A7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D55234F8293CC81100D63041 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		D55234FA293CC92E00D63041 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		D55234FC293CC95400D63041 /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
 		D5F64A542936492900A5BE6D /* ResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
 		D5F64A5829364C4600A5BE6D /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		D9045F312825B233001A8A16 /* sport_words_nouns.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sport_words_nouns.csv; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 			children = (
 				278513D0281FDA56004924D0 /* Controller */,
 				278513C0281FC555004924D0 /* Main.storyboard */,
+				D55234FA293CC92E00D63041 /* RecordTableViewCell.swift */,
+				D55234FC293CC95400D63041 /* RecordCell.xib */,
 				D538AE1A29392C8A003386A7 /* SettingsManager.swift */,
 				DA6889C7282456A6005C89D9 /* GradientBorderButton.swift */,
 				D538AE1C293933EF003386A7 /* SettingsViewController.swift */,
@@ -142,6 +150,7 @@
 				278513D7282031ED004924D0 /* RulesViewController.swift */,
 				278513D928203226004924D0 /* ChoiceViewController.swift */,
 				278513DB28203250004924D0 /* GameViewController.swift */,
+				D55234F8293CC81100D63041 /* RecordsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,6 +278,7 @@
 				D5F64A552936492900A5BE6D /* ResultView.xib in Resources */,
 				278513C2281FC555004924D0 /* Main.storyboard in Resources */,
 				DA9B3A022823CD18009BA30A /* swift_words_nouns.csv in Resources */,
+				D55234FD293CC95400D63041 /* RecordCell.xib in Resources */,
 				D9045F302825AFA5001A8A16 /* russian_words_nouns.csv in Resources */,
 				D9045F342825B36E001A8A16 /* random_words_nouns.csv in Resources */,
 			);
@@ -289,7 +299,9 @@
 				DAB8B366282294A500ABA6D0 /* NetworkManager.swift in Sources */,
 				DA6889C8282456A6005C89D9 /* GradientBorderButton.swift in Sources */,
 				278513DA28203226004924D0 /* ChoiceViewController.swift in Sources */,
+				D55234F9293CC81200D63041 /* RecordsViewController.swift in Sources */,
 				D538AE1B29392C8A003386A7 /* SettingsManager.swift in Sources */,
+				D55234FB293CC92E00D63041 /* RecordTableViewCell.swift in Sources */,
 				DA9B39FE2823CD01009BA30A /* WordStore.swift in Sources */,
 				278513D8282031ED004924D0 /* RulesViewController.swift in Sources */,
 				DAB8B364282294A500ABA6D0 /* Joke.swift in Sources */,
