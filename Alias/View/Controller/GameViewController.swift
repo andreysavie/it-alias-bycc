@@ -14,6 +14,13 @@ enum Status: CaseIterable {
 enum TeamType {
     case teamOne
     case teamTwo
+    
+    var desc: String {
+        switch self {
+        case .teamOne: return "first"
+        case .teamTwo: return "second"
+        }
+    }
 }
 
 struct Team {
@@ -35,6 +42,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var closeButton: UIButton!
     
+    let feedback = UINotificationFeedbackGenerator()
+
     var sound = SoundBrain()
     var randomAction = RandomAction()
     var topic = "russian_words_nouns" {
@@ -48,7 +57,7 @@ class GameViewController: UIViewController {
     var currentTeam: Team?
     var winner: Team? = nil
     
-    var roundDuration = 5 // SettingsManager.shared.timeOfRound
+    var roundDuration = 60
     
     var winScore = SettingsManager.shared.numOfWords
     
@@ -60,6 +69,8 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        feedback.prepare()
         
         restartGame()
         
@@ -173,6 +184,8 @@ class GameViewController: UIViewController {
         score += 1
         sound.answerRightSound()
         
+        feedback.notificationOccurred(.success)
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
             self?.getNext()
         }
@@ -183,6 +196,8 @@ class GameViewController: UIViewController {
         score -= 1
         sound.skipWordSound()
         
+        feedback.notificationOccurred(.warning)
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.getNext()
         }
@@ -193,6 +208,8 @@ class GameViewController: UIViewController {
         score -= 1
         sound.skipWordSound()
         
+        feedback.notificationOccurred(.error)
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.getNext()
         }
