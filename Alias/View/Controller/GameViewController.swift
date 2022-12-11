@@ -100,39 +100,40 @@ class GameViewController: UIViewController {
        
        self.enableAnswerButtons()
 
-       self.resultView.removeFromSuperview()
+//       self.resultView.removeFromSuperview()
        
     }
     
-    private lazy var resultView: ResultView = {
-        let resultView = ResultView(frame: self.view.frame)
-        // score view
-        if let scoreView = Bundle.main.loadNibNamed("ResultView", owner: nil, options: nil)?.first as? ResultView {
-            scoreView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-            scoreView.center = self.view.center
-//            let desc = score == 1 ? "word" : "words"
+//    private lazy var resultView: ScoreView = {
+//        let resultView = ScoreView(frame: self.view.frame)
+//        // score view
+//        if let scoreView = Bundle.main.loadNibNamed("ResultView", owner: nil, options: nil)?.first as? ResultView {
+//            scoreView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+//            scoreView.center = self.view.center
+////            let desc = score == 1 ? "word" : "words"
 //            scoreView.scoreLabel?.text = String(format: "Score: %d %@", self.currentTeam?.score ?? 0, desc)
             
             // background blur
-            let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            blurEffectView.frame = view.bounds
-            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            
-            let continueButton = UIButton(frame: CGRect(x: scoreView.frame.minX, y: scoreView.frame.maxY + 16, width: scoreView.frame.width, height: 50))
-            continueButton.setTitle("Continue", for: .normal)
-            continueButton.backgroundColor = .white
-            continueButton.cornerRadius = 16
-            continueButton.setTitleColor(.black, for: .normal)
-            continueButton.isUserInteractionEnabled = true
-            continueButton.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
-            
-            resultView.addSubview(blurEffectView)
-            resultView.addSubview(scoreView)
-            resultView.addSubview(continueButton)
-        }
-       return resultView
-    }()
+//            let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+//            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//            blurEffectView.frame = view.bounds
+//            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//
+//            let continueButton = UIButton(frame: CGRect(x: scoreView.frame.minX, y: scoreView.frame.maxY + 16, width: scoreView.frame.width, height: 50))
+//            continueButton.setTitle("Continue", for: .normal)
+//            continueButton.backgroundColor = .white
+//            continueButton.cornerRadius = 16
+//            continueButton.setTitleColor(.black, for: .normal)
+//            continueButton.isUserInteractionEnabled = true
+//            continueButton.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
+//
+//            resultView.addSubview(blurEffectView)
+////            resultView.addSubview(continueButton)
+//
+//            resultView.addSubview(scoreView)
+//        }
+//       return resultView
+//    }()
     
     override func viewWillAppear(_ animated: Bool) {
         status = .waiting
@@ -164,14 +165,25 @@ class GameViewController: UIViewController {
             incorrectButton.alpha = 0.5
             skipButton.alpha = 0.5
             
-            view.addSubview(resultView)
+//            view.addSubview(resultView)
             view.bringSubviewToFront(closeButton)
 
             let desc = score == 1 ? "word" : "words"
-            resultView.scoreLabel?.text = String(format: "Score: %d %@", self.currentTeam?.score ?? 0, desc)
-            resultView.teamLabel?.text = String(format: "Team \"%@\"", self.currentTeam?.name ?? "noname")
             currentTeam?.score = self.score
             currentTeam?.rounds += 1
+            
+            
+            if let team = currentTeam {
+                
+                let scoreView = ScoreView(frame: self.view.frame, team: team)
+                
+                scoreView.tapAction = { [weak self] in
+                    scoreView.removeFromSuperview()
+                    self?.restartGame()
+                }
+                
+                    view.addSubview(scoreView)
+            }
             
             let index = teams.firstIndex(where: { $0.type == currentTeam?.type })
             teams[index ?? 0] = currentTeam!

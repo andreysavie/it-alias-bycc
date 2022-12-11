@@ -33,6 +33,7 @@ class ScoreView: UIView {
         resultView.translatesAutoresizingMaskIntoConstraints = false
         let desc = self.score == 1 ? "word" : "words"
         resultView.scoreLabel?.text = String(format: "Score: %d %@", self.score ?? 0, desc)
+        resultView.teamLabel?.text = teamName
         return resultView
     }()
     
@@ -40,7 +41,7 @@ class ScoreView: UIView {
         let continueButton = UIButton()
         continueButton.translatesAutoresizingMaskIntoConstraints = false
         continueButton.setTitle("Continue", for: .normal)
-        continueButton.backgroundColor = .white.withAlphaComponent(0.7)
+        continueButton.backgroundColor = .white.withAlphaComponent(1)
         continueButton.cornerRadius = 16
         continueButton.setTitleColor(.systemYellow, for: .normal)
         continueButton.isUserInteractionEnabled = true
@@ -48,9 +49,10 @@ class ScoreView: UIView {
         return continueButton
     }()
     
-    override init(frame: CGRect) {
-//        self.team = team
+    init(frame: CGRect, team: Team) {
         super.init(frame: frame)
+        self.teamName = team.name
+        self.score = team.score
         
         self.backgroundColor = .clear
         
@@ -59,7 +61,7 @@ class ScoreView: UIView {
         self.addSubview(continueButton)
         
         setupLayout()
-
+        
     }
     
     required init?(coder: NSCoder) {
@@ -83,11 +85,13 @@ class ScoreView: UIView {
             resultView.widthAnchor.constraint(equalToConstant: 300),
             resultView.heightAnchor.constraint(equalToConstant: 300),
 
-            continueButton.centerYAnchor.constraint(equalTo: resultView.centerYAnchor),
-            continueButton.widthAnchor.constraint(equalTo: resultView.widthAnchor),
+            continueButton.heightAnchor.constraint(equalToConstant: 50),
+            continueButton.widthAnchor.constraint(equalToConstant: 300),
+            
+            continueButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             continueButton.topAnchor.constraint(equalTo: resultView.bottomAnchor, constant: 16),
-            continueButton.heightAnchor.constraint(equalToConstant: 50)
         
         ])
     }
+
 }

@@ -55,10 +55,10 @@
             <viewLayoutGuide key="safeArea" id="tEG-uz-fxg"/>
             <color key="backgroundColor" name="AccentColor"/>
             <constraints>
-                <constraint firstItem="tEG-uz-fxg" firstAttribute="bottom" secondItem="bDn-ek-bFd" secondAttribute="bottom" constant="8" id="4sP-f0-Zyo"/>
-                <constraint firstItem="bDn-ek-bFd" firstAttribute="leading" secondItem="tEG-uz-fxg" secondAttribute="leading" constant="8" id="U2Y-Gr-o4i"/>
-                <constraint firstItem="tEG-uz-fxg" firstAttribute="trailing" secondItem="bDn-ek-bFd" secondAttribute="trailing" constant="8" id="hux-zv-CR0"/>
-                <constraint firstItem="bDn-ek-bFd" firstAttribute="top" secondItem="tvf-J8-EFz" secondAttribute="top" constant="8" id="z43-lK-E9g"/>
+                <constraint firstAttribute="bottom" secondItem="bDn-ek-bFd" secondAttribute="bottom" constant="8" id="4sP-f0-Zyo"/>
+                <constraint firstItem="bDn-ek-bFd" firstAttribute="leading" secondItem="tvf-J8-EFz" secondAttribute="leading" constant="8" id="U2Y-Gr-o4i"/>
+                <constraint firstItem="bDn-ek-bFd" firstAttribute="top" secondItem="tvf-J8-EFz" secondAttribute="top" constant="8" id="caQ-tE-xBd"/>
+                <constraint firstAttribute="trailing" secondItem="bDn-ek-bFd" secondAttribute="trailing" constant="8" id="hux-zv-CR0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
