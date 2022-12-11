@@ -18,17 +18,26 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bDn-ek-bFd">
                     <rect key="frame" x="8" y="8" width="284" height="284"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time elapsed!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpk-ge-Gdl" userLabel="StatusLabel">
-                            <rect key="frame" x="0.0" y="0.0" width="284" height="50"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team &quot;TEAM&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpk-ge-Gdl" userLabel="TeamLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="284" height="35"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="fWA-Uc-4qX"/>
+                                <constraint firstAttribute="height" constant="35" id="fWA-Uc-4qX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                            <color key="textColor" name="MainColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time elapsed!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPB-I8-aZt" userLabel="StatusLabel">
+                            <rect key="frame" x="0.0" y="35" width="284" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="bYZ-rD-7MO"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                             <color key="textColor" name="MainColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="alarm.waves.left.and.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="E0u-MO-0Pn" userLabel="alarmImage">
-                            <rect key="frame" x="0.0" y="50" width="284" height="203"/>
+                            <rect key="frame" x="0.0" y="85" width="284" height="168"/>
                             <color key="tintColor" name="MainColor"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 6 words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tp2-zJ-cYv" userLabel="ScoreLabel">
@@ -65,6 +74,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="scoreLabel" destination="Tp2-zJ-cYv" id="6rL-dK-535"/>
+                <outlet property="teamLabel" destination="hpk-ge-Gdl" id="wPC-IN-5dw"/>
             </connections>
             <point key="canvasLocation" x="265" y="-132"/>
         </view>

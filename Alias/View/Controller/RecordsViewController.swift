@@ -49,6 +49,7 @@ class RecordsViewController: UIViewController {
                 
         recordsTableVIew.delegate = self
         recordsTableVIew.dataSource = self
+        recordsTableVIew.separatorStyle = .none
         
         recordsTableVIew.register(UINib(nibName: "RecordCell", bundle: nil), forCellReuseIdentifier: "RecordCell")
     
@@ -72,6 +73,8 @@ extension RecordsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath) as! RecordTableViewCell
         cell.selectionStyle = .none
+        cell.contentView.backgroundColor = .clear
+        cell.backgroundColor = .clear
         
         let record = fetchedResultsController.object(at: indexPath)
 

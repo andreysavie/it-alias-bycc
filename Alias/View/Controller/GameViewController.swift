@@ -104,14 +104,14 @@ class GameViewController: UIViewController {
        
     }
     
-    private lazy var resultView: UIView = {
-        let resultView = UIView(frame: self.view.frame)
+    private lazy var resultView: ResultView = {
+        let resultView = ResultView(frame: self.view.frame)
         // score view
         if let scoreView = Bundle.main.loadNibNamed("ResultView", owner: nil, options: nil)?.first as? ResultView {
             scoreView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
             scoreView.center = self.view.center
-            let desc = score == 1 ? "word" : "words"
-            scoreView.scoreLabel?.text = String(format: "Score: %d %@", self.currentTeam?.score ?? 0, desc)
+//            let desc = score == 1 ? "word" : "words"
+//            scoreView.scoreLabel?.text = String(format: "Score: %d %@", self.currentTeam?.score ?? 0, desc)
             
             // background blur
             let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
@@ -139,20 +139,20 @@ class GameViewController: UIViewController {
     }
     
     private func statusUpdater() {
-        // pausedTimeRemaining = timeRemaining
+
         switch self.status {
             
         case .correct:
             disableAnswerButtons()
-            animateBackgroundChanged(for: correctButton, to: .systemGreen.withAlphaComponent(0.5), with: UIColor(named: "MainColor") ?? .white)
+            animateBackgroundChanged(for: correctButton, to: .systemGreen.withAlphaComponent(0.5), with: .white)
             
         case .incorrect:
             disableAnswerButtons()
-            animateBackgroundChanged(for: incorrectButton, to: .systemRed.withAlphaComponent(0.5), with: UIColor(named: "MainColor") ?? .white)
+            animateBackgroundChanged(for: incorrectButton, to: .systemRed.withAlphaComponent(0.5), with: .white)
             
         case .skip:
             disableAnswerButtons()
-            animateBackgroundChanged(for: skipButton, to: .white.withAlphaComponent(0.5), with: UIColor(named: "MainColor") ?? .white)
+            animateBackgroundChanged(for: skipButton, to: .white.withAlphaComponent(0.5), with: .white)
             
         case .waiting:
             self.teamNameLabel.text = self.currentTeam?.name
@@ -166,7 +166,10 @@ class GameViewController: UIViewController {
             
             view.addSubview(resultView)
             view.bringSubviewToFront(closeButton)
-            
+
+            let desc = score == 1 ? "word" : "words"
+            resultView.scoreLabel?.text = String(format: "Score: %d %@", self.currentTeam?.score ?? 0, desc)
+            resultView.teamLabel?.text = String(format: "Team \"%@\"", self.currentTeam?.name ?? "noname")
             currentTeam?.score = self.score
             currentTeam?.rounds += 1
             
@@ -174,15 +177,15 @@ class GameViewController: UIViewController {
             teams[index ?? 0] = currentTeam!
                         
             if let winner = teams.first(where: { $0.score >= self.winScore }) {
-                print ( "\(winner.name) is winner with score \(winner.score)!")
                 self.winner = winner
             }
             
             let looser = teams.first(where: { $0.type != winner?.type })
             
             guard let winner, let looser else { return }
-                    
             CoreDataManager.shared.saveRecord(winner: winner, looser: looser)
+            
+            
         }
     }
 
