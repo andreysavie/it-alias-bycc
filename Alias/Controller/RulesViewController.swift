@@ -11,7 +11,6 @@ class RulesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     @IBAction func backButton(_ sender: UIButton) {

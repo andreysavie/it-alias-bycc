@@ -18,29 +18,27 @@ class ChoiceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        topicOne.setTitle("English Words", for: .normal)
-        topicTwo.setTitle("Russian Words", for: .normal)
-        topicThree.setTitle("Sport Words", for: .normal)
+        topicOne.setTitle("Swift Terms", for: .normal)
+        topicTwo.setTitle("IT Terms", for: .normal)
+        topicThree.setTitle("Any Words", for: .normal)
         topicFour.setTitle("Random Words", for: .normal)
-
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
-
         switch sender.tag {
-        case 0: selectedFilePath = "english_words_nouns"
+        case 0: selectedFilePath = "swift_words_nouns"
         case 1: selectedFilePath = "russian_words_nouns"
         case 2: selectedFilePath = "sport_words_nouns"
         case 3: selectedFilePath = "random_words_nouns"
-        default:
-            return
+        default: return
         }
+    }
 
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let gameVC = segue.destination as? GameViewController else { return }
-        gameVC.topic = selectedFilePath
+        guard let settingsVC = segue.destination as? SettingsViewController else { return }
+        settingsVC.topic = selectedFilePath
     }
+
     @IBAction func closePressed(_ sender: UIButton) {
         presentingViewController?.dismiss(animated: true)
     }
