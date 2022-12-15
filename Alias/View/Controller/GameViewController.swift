@@ -58,7 +58,7 @@ class GameViewController: UIViewController {
     var winner: Team? = nil
     
     var roundDuration = 60
-    var roundDelay = 5
+    var roundDelay: Double = 6
     
     var winScore = SettingsManager.shared.numOfWords
     
@@ -117,18 +117,16 @@ class GameViewController: UIViewController {
         self.view.addSubview(blurEffectView)
         self.view.addSubview(delayView)
         
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [unowned self] timer in
-            self.delayView.text = "\(delay)"
-            delay -= 1
+        RunLoop.main.add(Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { [unowned self] timer in
+            self.delayView.text = "\(Int(delay))"
+            delay -= 0.04
             if delay < 0 {
                 timer.invalidate()
                 delayView.removeFromSuperview()
                 blurEffectView.removeFromSuperview()
                 self.restartGame()
             }
-        }
-        
-        
+        }, forMode: RunLoop.Mode.common)
     }
     
     private lazy var resultView: UIView = {
