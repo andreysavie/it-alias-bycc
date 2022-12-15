@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChoiceViewController: UIViewController {
+final class ChoiceViewController: UIViewController {
 
     @IBOutlet private weak var topicOne: UIButton!
     @IBOutlet private weak var topicTwo: UIButton!

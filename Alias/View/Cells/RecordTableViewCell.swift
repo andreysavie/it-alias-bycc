@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecordTableViewCell: UITableViewCell {
+final class RecordTableViewCell: UITableViewCell {
 
     static var identifier = "RecordTableViewCell"
 

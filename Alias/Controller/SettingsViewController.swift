@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
 
     @IBOutlet weak var teamOne: UILabel!
     @IBOutlet weak var teamTwo: UILabel!

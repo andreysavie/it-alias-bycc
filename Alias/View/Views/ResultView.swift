@@ -7,14 +7,14 @@
 
 import UIKit
 
-class ResultView: UIView {
+final class ResultView: UIView {
 
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var teamLabel: UILabel!
 
 }
 
-class ScoreView: UIView {
+final class ScoreView: UIView {
 
     var teamName: String?
     var score: Int?

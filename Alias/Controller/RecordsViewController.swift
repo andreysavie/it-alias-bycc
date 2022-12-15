@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecordsViewController: UIViewController {
+final class RecordsViewController: UIViewController {
 
     @IBOutlet weak var recordsTableVIew: UITableView!
 

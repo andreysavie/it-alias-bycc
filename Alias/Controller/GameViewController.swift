@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+final class GameViewController: UIViewController {
 
     enum Status: CaseIterable {
         case correct, incorrect, elapsed, waiting, skip
