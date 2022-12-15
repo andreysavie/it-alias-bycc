@@ -17,8 +17,8 @@ enum TeamType {
     
     var desc: String {
         switch self {
-        case .teamOne: return "first"
-        case .teamTwo: return "second"
+            case .teamOne: return "first"
+            case .teamTwo: return "second"
         }
     }
 }
@@ -58,6 +58,7 @@ class GameViewController: UIViewController {
     var winner: Team? = nil
     
     var roundDuration = 60
+    var roundDelay = 5
     
     var winScore = SettingsManager.shared.numOfWords
     
@@ -72,7 +73,7 @@ class GameViewController: UIViewController {
         
         feedback.prepare()
         
-        restartGame()
+        restartGameWithDelay()
         
         teams.append(Team(type: .teamOne, name: SettingsManager.shared.teamOneName))
         teams.append(Team(type: .teamTwo, name: SettingsManager.shared.teamTwoName))
@@ -84,11 +85,11 @@ class GameViewController: UIViewController {
        
        guard self.winner == nil else { self.dismiss(animated: true); return }
        
-        progress.progress = 1
-        WordStore.shared.setWords(by: topic)
-        showWord()
-        timeRemaining = roundDuration // pausedTimeRemaining
-        restartTimer()
+       progress.progress = 1
+       WordStore.shared.setWords(by: topic)
+       showWord()
+       timeRemaining = roundDuration // pausedTimeRemaining
+       restartTimer()
        
        currentTeam = currentTeam?.type == .teamOne
        ? teams.first(where: {$0.type == .teamTwo} )
@@ -101,6 +102,33 @@ class GameViewController: UIViewController {
 
        self.resultView.removeFromSuperview()
        
+    }
+    
+    @objc private func restartGameWithDelay() {
+        
+        guard self.winner == nil else { self.dismiss(animated: true); return }
+        
+        var delay = roundDelay
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.addSubview(blurEffectView)
+        self.view.addSubview(delayView)
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [unowned self] timer in
+            self.delayView.text = "\(delay)"
+            delay -= 1
+            if delay < 0 {
+                timer.invalidate()
+                delayView.removeFromSuperview()
+                blurEffectView.removeFromSuperview()
+                self.restartGame()
+            }
+        }
+        
+        
     }
     
     private lazy var resultView: UIView = {
@@ -124,13 +152,28 @@ class GameViewController: UIViewController {
             continueButton.cornerRadius = 16
             continueButton.setTitleColor(.black, for: .normal)
             continueButton.isUserInteractionEnabled = true
-            continueButton.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
+            continueButton.addTarget(self, action: #selector(restartGameWithDelay), for: .touchUpInside)
             
             resultView.addSubview(blurEffectView)
             resultView.addSubview(scoreView)
             resultView.addSubview(continueButton)
         }
        return resultView
+    }()
+    
+    private lazy var delayView: UILabel = {
+       let label = UILabel(frame: CGRect(x: 0, y: 0,
+                                         width: 160,
+                                         height: 160))
+        label.center = self.view.center
+        label.layer.borderWidth = label.frame.width * 0.08
+        label.layer.borderColor = UIColor.white.cgColor
+        label.layer.cornerRadius = label.frame.width / 4
+        label.text = "\(self.roundDelay)"
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: label.frame.width * 0.8)
+        label.textColor = .white
+        return label
     }()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -253,7 +296,7 @@ class GameViewController: UIViewController {
     private func restartTimer() {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-//            self.statusUpdater(self.status)
+            //            self.statusUpdater(self.status)
             if self.timeRemaining < 1 {
                 timer.invalidate()
                 self.status = .elapsed
@@ -285,13 +328,13 @@ class GameViewController: UIViewController {
     }
     
     private func animateBackgroundChanged(for view: UIView, to color: UIColor, with flash: UIColor = .white.withAlphaComponent(0.5)) {
+        UIView.animate(withDuration: 0.2) {
+            view.backgroundColor = color
+        } completion: { _ in
             UIView.animate(withDuration: 0.2) {
-                view.backgroundColor = color
-            } completion: { _ in
-                UIView.animate(withDuration: 0.2) {
-                    view.backgroundColor = flash
-                }
+                view.backgroundColor = flash
             }
+        }
     }
     
     private func updateJokeLabel(with joke: Joke) {
