@@ -18,7 +18,7 @@ struct Team {
 enum TeamType {
     case teamOne
     case teamTwo
-    
+
     var desc: String {
         switch self {
         case .teamOne: return "first"
@@ -26,4 +26,3 @@ enum TeamType {
         }
     }
 }
-

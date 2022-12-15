@@ -12,7 +12,7 @@ enum Status: CaseIterable {
 }
 
 class GameViewController: UIViewController {
-    
+
     @IBOutlet weak var timeRemainingLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
@@ -28,19 +28,20 @@ class GameViewController: UIViewController {
             WordStore.shared.setWords(by: topic)
         }
     }
-    
+
     var roundDuration = 60
-    
-    var status: Status = .waiting{
+
+    var status: Status = .waiting {
         didSet {
             if case .waiting = status {
+                // nothing
             } else {
-                //timer?.invalidate()
+                // timer?.invalidate()
                 statusUpdater(status)
             }
         }
     }
-    
+
     var score: Int = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
@@ -58,11 +59,11 @@ class GameViewController: UIViewController {
         timeRemaining = roundDuration // pausedTimeRemaining
         restartTimer()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         status = .waiting
     }
-    
+
     private func statusUpdater(_ status: Status) {
         // pausedTimeRemaining = timeRemaining
         switch status {
@@ -93,7 +94,7 @@ class GameViewController: UIViewController {
         score += 1
         sound.answerRightSound()
     }
-    
+
     @IBAction func incorrectPressed() {
         status = .incorrect
         score -= 1
@@ -106,7 +107,7 @@ class GameViewController: UIViewController {
         let randNum = Int.random(in: 1...10)
         if randNum == num {
             let alert = UIAlertController(title: "ACTION",
-                                          message: random, //need random
+                                          message: random, // need random
                                           preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Nope",
                                           style: UIAlertAction.Style.default,
@@ -132,11 +133,11 @@ class GameViewController: UIViewController {
         animateBackgroundChanged(for: correctButton, to: .clear)
         animateBackgroundChanged(for: incorrectButton, to: .clear)
     }
-    
+
     @IBAction func closePressed() {
         presentingViewController?.dismiss(animated: true)
     }
-    
+
     private func restartTimer() {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
@@ -150,17 +151,17 @@ class GameViewController: UIViewController {
         }
         timer?.tolerance = 0.2
     }
-    
+
     private func disableAnswerButtons() {
         correctButton.isEnabled = false
         incorrectButton.isEnabled = false
     }
-    
+
     private func enableAnswerButtons() {
         correctButton.isEnabled = true
         incorrectButton.isEnabled = true
     }
-    
+
     private func animateBackgroundChanged(for view: UIView, to color: UIColor, with flash: UIColor = .white.withAlphaComponent(0.5)) {
             UIView.animate(withDuration: 0.05) {
                 view.backgroundColor = flash
@@ -170,11 +171,11 @@ class GameViewController: UIViewController {
                 }
             }
     }
-    
+
     private func updateJokeLabel(with joke: Joke) {
         wordLabel.text = joke.setup + "\n" + joke.punchline
     }
-    
+
     private func showWord() {
         wordLabel.text = WordStore.shared.randomWord()
     }

@@ -241,9 +241,9 @@
 		DAB8B35C282294A500ABA6D0 /* JokeService */ = {
 			isa = PBXGroup;
 			children = (
-				DAB8B35D282294A500ABA6D0 /* JokeEndpoint.swift */,
 				DAB8B35E282294A500ABA6D0 /* Joke.swift */,
 				DAB8B35F282294A500ABA6D0 /* JokeStore.swift */,
+				DAB8B35D282294A500ABA6D0 /* JokeEndpoint.swift */,
 			);
 			path = JokeService;
 			sourceTree = "<group>";
@@ -267,6 +267,7 @@
 				278513B3281FC555004924D0 /* Sources */,
 				278513B4281FC555004924D0 /* Frameworks */,
 				278513B5281FC555004924D0 /* Resources */,
+				B8293828294BAFFC00D5865F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -330,6 +331,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B8293828294BAFFC00D5865F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#export PATH=\"$PATH:/opt/homebrew/bin\"\n#if which swiftlint > /dev/null; then\n#  swiftlint\n#else\n#  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		278513B3281FC555004924D0 /* Sources */ = {

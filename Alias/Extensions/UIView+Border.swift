@@ -9,34 +9,25 @@ import UIKit
 
 @IBDesignable
 extension UIView {
-    
+
     @IBInspectable
     var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
+        get { return layer.cornerRadius }
         set {
             layer.cornerRadius = newValue
             layer.masksToBounds = newValue > 0
             clipsToBounds = newValue > 0
         }
     }
-    
+
     @IBInspectable
     var borderWidth: CGFloat {
-        set {
-            layer.borderWidth = newValue
-        }
-        get {
-            return layer.borderWidth
-        }
+        get { return layer.borderWidth }
+        set { layer.borderWidth = newValue }
     }
-    
+
     @IBInspectable
     var borderColor: UIColor? {
-        set {
-            layer.borderColor = newValue?.cgColor
-        }
         get {
             if let color = layer.borderColor {
                 return UIColor(cgColor: color)
@@ -44,6 +35,7 @@ extension UIView {
                 return nil
             }
         }
+        set { layer.borderColor = newValue?.cgColor }
     }
-    
+
 }

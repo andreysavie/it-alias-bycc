@@ -8,13 +8,13 @@
 import Foundation
 
 final class RecordModel {
-    
+
     var winnerTeam: Team
     var looserTeam: Team
-    
+
     init(winnerTeam: Team, looserTeam: Team) {
         self.winnerTeam = winnerTeam
         self.looserTeam = looserTeam
     }
-    
+
 }
