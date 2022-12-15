@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		278513BB281FC555004924D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513BA281FC555004924D0 /* AppDelegate.swift */; };
 		278513BD281FC555004924D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513BC281FC555004924D0 /* SceneDelegate.swift */; };
-		278513BF281FC555004924D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513BE281FC555004924D0 /* ViewController.swift */; };
 		278513C2281FC555004924D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278513C0281FC555004924D0 /* Main.storyboard */; };
 		278513C4281FC557004924D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278513C3281FC557004924D0 /* Assets.xcassets */; };
 		278513C7281FC557004924D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278513C5281FC557004924D0 /* LaunchScreen.storyboard */; };
 		278513D8282031ED004924D0 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513D7282031ED004924D0 /* RulesViewController.swift */; };
 		278513DA28203226004924D0 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513D928203226004924D0 /* ChoiceViewController.swift */; };
 		278513DC28203250004924D0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278513DB28203250004924D0 /* GameViewController.swift */; };
+		D5262078294B9FC1002656C2 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5262077294B9FC1002656C2 /* Team.swift */; };
+		D526207F294BA23B002656C2 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D526207E294BA23B002656C2 /* RecordModel.swift */; };
 		D538AE1B29392C8A003386A7 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538AE1A29392C8A003386A7 /* SettingsManager.swift */; };
 		D538AE1D293933EF003386A7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538AE1C293933EF003386A7 /* SettingsViewController.swift */; };
 		D53B3C60293D28FB00C632BB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B3C5F293D28FB00C632BB /* CoreDataStack.swift */; };
@@ -49,7 +50,6 @@
 		278513B7281FC555004924D0 /* Alias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alias.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278513BA281FC555004924D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		278513BC281FC555004924D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		278513BE281FC555004924D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		278513C1281FC555004924D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		278513C3281FC557004924D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		278513C6281FC557004924D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +57,8 @@
 		278513D7282031ED004924D0 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		278513D928203226004924D0 /* ChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		278513DB28203250004924D0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D5262077294B9FC1002656C2 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		D526207E294BA23B002656C2 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		D538AE1A29392C8A003386A7 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		D538AE1C293933EF003386A7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D53B3C5F293D28FB00C632BB /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -116,19 +118,15 @@
 		278513B9281FC555004924D0 /* Alias */ = {
 			isa = PBXGroup;
 			children = (
+				D526207C294BA06F002656C2 /* AppState */,
+				DAB8B360282294A500ABA6D0 /* Networking */,
+				D526207A294BA028002656C2 /* Managers */,
 				D9070E3628268A0F00825BBB /* Model */,
 				278513CF281FDA4D004924D0 /* View */,
-				DAB8B35C282294A500ABA6D0 /* JokeService */,
-				DAB8B360282294A500ABA6D0 /* Networking */,
-				DA9B39FC2823CD01009BA30A /* WordService */,
-				DA6889CD282456C9005C89D9 /* Auxiliary */,
+				278513D0281FDA56004924D0 /* Controller */,
+				DA6889CD282456C9005C89D9 /* Extensions */,
 				DA9B39FF2823CD18009BA30A /* Media */,
-				278513BA281FC555004924D0 /* AppDelegate.swift */,
-				278513BC281FC555004924D0 /* SceneDelegate.swift */,
-				278513C5281FC557004924D0 /* LaunchScreen.storyboard */,
 				278513C8281FC557004924D0 /* Info.plist */,
-				D9070E372826909200825BBB /* rightSound.mp3 */,
-				D9070E382826909200825BBB /* skipWordSound.mp3 */,
 				D53B3C63293D293E00C632BB /* CoreData */,
 			);
 			path = Alias;
@@ -137,15 +135,10 @@
 		278513CF281FDA4D004924D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				278513D0281FDA56004924D0 /* Controller */,
+				D526207B294BA040002656C2 /* Views */,
+				D5262079294BA004002656C2 /* Cells */,
 				278513C0281FC555004924D0 /* Main.storyboard */,
-				D55234FA293CC92E00D63041 /* RecordTableViewCell.swift */,
-				D55234FC293CC95400D63041 /* RecordCell.xib */,
-				D538AE1A29392C8A003386A7 /* SettingsManager.swift */,
 				DA6889C7282456A6005C89D9 /* GradientBorderButton.swift */,
-				D538AE1C293933EF003386A7 /* SettingsViewController.swift */,
-				D5F64A542936492900A5BE6D /* ResultView.xib */,
-				D5F64A5829364C4600A5BE6D /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -153,13 +146,52 @@
 		278513D0281FDA56004924D0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				278513BE281FC555004924D0 /* ViewController.swift */,
 				278513D7282031ED004924D0 /* RulesViewController.swift */,
 				278513D928203226004924D0 /* ChoiceViewController.swift */,
 				278513DB28203250004924D0 /* GameViewController.swift */,
 				D55234F8293CC81100D63041 /* RecordsViewController.swift */,
+				D538AE1C293933EF003386A7 /* SettingsViewController.swift */,
 			);
-			path = Controller;
+			name = Controller;
+			path = View/Controller;
+			sourceTree = "<group>";
+		};
+		D5262079294BA004002656C2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D55234FC293CC95400D63041 /* RecordCell.xib */,
+				D55234FA293CC92E00D63041 /* RecordTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D526207A294BA028002656C2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DA9B39FD2823CD01009BA30A /* WordStore.swift */,
+				D538AE1A29392C8A003386A7 /* SettingsManager.swift */,
+				DAB8B35C282294A500ABA6D0 /* JokeService */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D526207B294BA040002656C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5F64A542936492900A5BE6D /* ResultView.xib */,
+				D5F64A5829364C4600A5BE6D /* ResultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D526207C294BA06F002656C2 /* AppState */ = {
+			isa = PBXGroup;
+			children = (
+				278513BA281FC555004924D0 /* AppDelegate.swift */,
+				278513BC281FC555004924D0 /* SceneDelegate.swift */,
+				278513C5281FC557004924D0 /* LaunchScreen.storyboard */,
+			);
+			path = AppState;
 			sourceTree = "<group>";
 		};
 		D53B3C63293D293E00C632BB /* CoreData */ = {
@@ -177,25 +209,19 @@
 			children = (
 				D9070E3428268A0300825BBB /* SoundBrain.swift */,
 				D9B52F552826EAEC00A4296B /* RandomAction.swift */,
+				D5262077294B9FC1002656C2 /* Team.swift */,
+				D526207E294BA23B002656C2 /* RecordModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DA6889CD282456C9005C89D9 /* Auxiliary */ = {
+		DA6889CD282456C9005C89D9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DA6889C9282456BA005C89D9 /* UIImage+.swift */,
 				DA6889CB282456C3005C89D9 /* UIView+Border.swift */,
 			);
-			path = Auxiliary;
-			sourceTree = "<group>";
-		};
-		DA9B39FC2823CD01009BA30A /* WordService */ = {
-			isa = PBXGroup;
-			children = (
-				DA9B39FD2823CD01009BA30A /* WordStore.swift */,
-			);
-			path = WordService;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DA9B39FF2823CD18009BA30A /* Media */ = {
@@ -206,6 +232,8 @@
 				D9045F332825B36E001A8A16 /* random_words_nouns.csv */,
 				D906AD492825A68100DFC524 /* russian_words_nouns.csv */,
 				D9045F312825B233001A8A16 /* sport_words_nouns.csv */,
+				D9070E372826909200825BBB /* rightSound.mp3 */,
+				D9070E382826909200825BBB /* skipWordSound.mp3 */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -310,9 +338,9 @@
 			files = (
 				D9070E3528268A0300825BBB /* SoundBrain.swift in Sources */,
 				D53B3C60293D28FB00C632BB /* CoreDataStack.swift in Sources */,
+				D5262078294B9FC1002656C2 /* Team.swift in Sources */,
 				DA6889CC282456C3005C89D9 /* UIView+Border.swift in Sources */,
 				DAB8B365282294A500ABA6D0 /* JokeStore.swift in Sources */,
-				278513BF281FC555004924D0 /* ViewController.swift in Sources */,
 				278513BB281FC555004924D0 /* AppDelegate.swift in Sources */,
 				D53B3C66293D298C00C632BB /* RecordTeamModel.xcdatamodeld in Sources */,
 				D53B3C62293D291700C632BB /* CoreDataManager.swift in Sources */,
@@ -326,6 +354,7 @@
 				278513D8282031ED004924D0 /* RulesViewController.swift in Sources */,
 				DAB8B364282294A500ABA6D0 /* Joke.swift in Sources */,
 				D5F64A5929364C4600A5BE6D /* ResultView.swift in Sources */,
+				D526207F294BA23B002656C2 /* RecordModel.swift in Sources */,
 				278513DC28203250004924D0 /* GameViewController.swift in Sources */,
 				278513BD281FC555004924D0 /* SceneDelegate.swift in Sources */,
 				D9B52F562826EAEC00A4296B /* RandomAction.swift in Sources */,

@@ -7,42 +7,12 @@
 
 import UIKit
 
-class RecordModel {
-    
-    var winnerTeam: Team
-    var looserTeam: Team
-    
-    init(winnerTeam: Team, looserTeam: Team) {
-        self.winnerTeam = winnerTeam
-        self.looserTeam = looserTeam
-    }
-    
-}
 
 class RecordsViewController: UIViewController {
     
     @IBOutlet weak var recordsTableVIew: UITableView!
     
-    @IBAction func closePressed(_ sender: Any) {
-        presentingViewController?.dismiss(animated: true)
-    }
-    
-//    // TODO: temp mock data
-//
-//    var records: [RecordModel] =
-//
-//    [RecordModel(
-//        winnerTeam: Team(type: .teamOne, name: "Winners", score: 15),
-//        looserTeam: Team(type: .teamTwo, name: "Loosers", score: 13)),
-//
-//     RecordModel(
-//        winnerTeam: Team(type: .teamOne, name: "Suckers", score: 25),
-//        looserTeam: Team(type: .teamTwo, name: "Fuckers", score: 12)
-//     )
-//    ]
-    
     private var fetchedResultsController = CoreDataManager.shared.fetchedResultsController
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +24,10 @@ class RecordsViewController: UIViewController {
         recordsTableVIew.register(UINib(nibName: "RecordCell", bundle: nil), forCellReuseIdentifier: "RecordCell")
     
     }
-    // Do any additional setup after loading the view.
     
+    @IBAction func closePressed(_ sender: Any) {
+        presentingViewController?.dismiss(animated: true)
+    }
 }
 
 extension RecordsViewController: UITableViewDataSource {

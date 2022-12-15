@@ -11,26 +11,6 @@ enum Status: CaseIterable {
     case correct, incorrect, elapsed, waiting, skip
 }
 
-enum TeamType {
-    case teamOne
-    case teamTwo
-    
-    var desc: String {
-        switch self {
-        case .teamOne: return "first"
-        case .teamTwo: return "second"
-        }
-    }
-}
-
-struct Team {
-    var type: TeamType
-    var name: String
-    var score: Int = 0
-    var rounds: Int = 0
-    var avatar: String = "person.2.circle.fill"
-}
-
 class GameViewController: UIViewController {
     
     @IBOutlet weak var timeRemainingLabel: UILabel!
@@ -43,30 +23,30 @@ class GameViewController: UIViewController {
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var closeButton: UIButton!
     
-    let feedback = UINotificationFeedbackGenerator()
+    // MARK: - PROPERTIES
+    
+    private let feedback = UINotificationFeedbackGenerator()
 
-    var sound = SoundBrain()
-    var randomAction = RandomAction()
-    var topic = "russian_words_nouns" {
-        didSet {
-            WordStore.shared.setWords(by: topic)
-        }
-    }
+    private var sound = SoundBrain()
+    private var randomAction = RandomAction()
+    public var topic = "russian_words_nouns" { didSet {  WordStore.shared.setWords(by: topic) } }
     
-    var teams = [Team]()
+    private var teams = [Team]()
     
-    var currentTeam: Team?
-    var winner: Team? = nil
+    private var currentTeam: Team?
+    private var winner: Team? = nil
     
-    var roundDuration = 60
+    public var roundDuration = 60
     
-    var winScore = SettingsManager.shared.numOfWords
+    public var winScore = SettingsManager.shared.numOfWords
     
-    var status: Status = .waiting { didSet { statusUpdater() } }
+    private var status: Status = .waiting { didSet { statusUpdater() } }
     
     private var score: Int = 0 { didSet { scoreLabel.text = "Score: \(score)" } }
     private var timeRemaining = 60 { didSet { self.updateTimeRemainingLabel()  } }
     private var timer: Timer?
+
+    // MARK: - LIFECYCLE
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,64 +61,14 @@ class GameViewController: UIViewController {
         self.currentTeam = teams.first
     }
     
-   @objc private func restartGame() {
-       
-       guard self.winner == nil else { self.dismiss(animated: true); return }
-       
-        progress.progress = 1
-        WordStore.shared.setWords(by: topic)
-        showWord()
-        timeRemaining = roundDuration // pausedTimeRemaining
-        restartTimer()
-       
-       currentTeam = currentTeam?.type == .teamOne
-       ? teams.first(where: {$0.type == .teamTwo} )
-       : teams.first(where: {$0.type == .teamOne} )
-       
-       self.status = .waiting
-       self.score = currentTeam?.score ?? 0
-       
-       self.enableAnswerButtons()
-
-//       self.resultView.removeFromSuperview()
-       
-    }
-    
-//    private lazy var resultView: ScoreView = {
-//        let resultView = ScoreView(frame: self.view.frame)
-//        // score view
-//        if let scoreView = Bundle.main.loadNibNamed("ResultView", owner: nil, options: nil)?.first as? ResultView {
-//            scoreView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-//            scoreView.center = self.view.center
-////            let desc = score == 1 ? "word" : "words"
-//            scoreView.scoreLabel?.text = String(format: "Score: %d %@", self.currentTeam?.score ?? 0, desc)
-            
-            // background blur
-//            let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
-//            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//            blurEffectView.frame = view.bounds
-//            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//
-//            let continueButton = UIButton(frame: CGRect(x: scoreView.frame.minX, y: scoreView.frame.maxY + 16, width: scoreView.frame.width, height: 50))
-//            continueButton.setTitle("Continue", for: .normal)
-//            continueButton.backgroundColor = .white
-//            continueButton.cornerRadius = 16
-//            continueButton.setTitleColor(.black, for: .normal)
-//            continueButton.isUserInteractionEnabled = true
-//            continueButton.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
-//
-//            resultView.addSubview(blurEffectView)
-////            resultView.addSubview(continueButton)
-//
-//            resultView.addSubview(scoreView)
-//        }
-//       return resultView
-//    }()
     
     override func viewWillAppear(_ animated: Bool) {
         status = .waiting
     }
     
+    
+    // MARK: - METHODS
+
     private func statusUpdater() {
 
         switch self.status {
@@ -200,6 +130,27 @@ class GameViewController: UIViewController {
             
         }
     }
+    
+    @objc private func restartGame() {
+        
+        guard self.winner == nil else { self.dismiss(animated: true); return }
+        
+         progress.progress = 1
+         WordStore.shared.setWords(by: topic)
+         showWord()
+         timeRemaining = roundDuration // pausedTimeRemaining
+         restartTimer()
+        
+        currentTeam = currentTeam?.type == .teamOne
+        ? teams.first(where: {$0.type == .teamTwo} )
+        : teams.first(where: {$0.type == .teamOne} )
+        
+        self.status = .waiting
+        self.score = currentTeam?.score ?? 0
+        
+        self.enableAnswerButtons()
+        
+     }
 
     @IBAction func correctPressed(sender: UIButton) {
         status = .correct
@@ -275,7 +226,7 @@ class GameViewController: UIViewController {
     private func restartTimer() {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-//            self.statusUpdater(self.status)
+
             if self.timeRemaining < 1 {
                 timer.invalidate()
                 self.status = .elapsed

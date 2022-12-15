@@ -22,25 +22,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var wordsSliderOutlet: UISlider!
     @IBOutlet weak var roundSliderOutlet: UISlider!
     
-    
-    @IBAction func closeButton(_ sender: Any) {
-        presentingViewController?.dismiss(animated: true)
-    }
-    
-    @IBAction func wordsSlider(_ sender: UISlider) {
-        numberOfWords.text = String(format: "%d", Int(sender.value))
-    }
-    
-    @IBAction func roundsSlider(_ sender: UISlider) {
-        numberOfRound.text = String(format: "%d", Int(sender.value))
-    }
-    
-    @IBAction func startButton(_ sender: UIButton) {
-        
-        SettingsManager.shared.numOfWords = Int(self.wordsSliderOutlet.value)
-        SettingsManager.shared.timeOfRound = Int(self.roundSliderOutlet.value)
-    }
-    
     public var topic = ""
 
     override func viewDidLoad() {
@@ -83,6 +64,24 @@ class SettingsViewController: UIViewController {
         vc.topic = topic
         vc.winScore = Int(wordsSliderOutlet.value)
         vc.roundDuration = Int(roundSliderOutlet.value)
+    }
+    
+    @IBAction func closeButton(_ sender: Any) {
+        presentingViewController?.dismiss(animated: true)
+    }
+    
+    @IBAction func wordsSlider(_ sender: UISlider) {
+        numberOfWords.text = String(format: "%d", Int(sender.value))
+    }
+    
+    @IBAction func roundsSlider(_ sender: UISlider) {
+        numberOfRound.text = String(format: "%d", Int(sender.value))
+    }
+    
+    @IBAction func startButton(_ sender: UIButton) {
+        
+        SettingsManager.shared.numOfWords = Int(self.wordsSliderOutlet.value)
+        SettingsManager.shared.timeOfRound = Int(self.roundSliderOutlet.value)
     }
     
     func reloadValues() {

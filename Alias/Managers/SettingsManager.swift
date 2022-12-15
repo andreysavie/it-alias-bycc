@@ -14,9 +14,7 @@ enum ValueType: String {
     case timeOfRound = "timeOfRound"
     case isTasksEnabled = "isTasksEnabled"
     case isPenaltyEnabled = "isPenaltyEnabled"
-    case isSoundsEnabled = "isSoundsEnabled"
-    
-    
+    case isSoundsEnabled = "isSoundsEnabled"    
 }
 
 final class SettingsManager {
