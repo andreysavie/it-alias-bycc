@@ -336,7 +336,6 @@
                                             <constraint firstAttribute="height" constant="60" id="S1T-H8-WFT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Correct">
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
@@ -356,7 +355,6 @@
                                             <constraint firstAttribute="height" constant="60" id="FR8-jq-Feu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Incorrect">
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
@@ -376,7 +374,6 @@
                                             <constraint firstAttribute="height" constant="60" id="z9z-fH-K68"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Skip">
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
