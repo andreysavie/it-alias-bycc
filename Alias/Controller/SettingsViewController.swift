@@ -79,28 +79,26 @@ final class SettingsViewController: UIViewController {
     }
 
     @IBAction func startButton(_ sender: UIButton) {
-
-        SettingsManager.shared.numOfWords = Int(self.wordsSliderOutlet.value)
-        SettingsManager.shared.timeOfRound = Int(self.roundSliderOutlet.value)
+        SettingsManager.shared.numOfWords = Int(wordsSliderOutlet.value)
+        SettingsManager.shared.timeOfRound = Int(roundSliderOutlet.value)
     }
 
     func reloadValues() {
-
         teamOne.text = SettingsManager.shared.teamOneName
         teamTwo.text = SettingsManager.shared.teamTwoName
 
-        self.numberOfWords.text = String(format: "%d", Int(wordsSliderOutlet.value))
-        self.numberOfRound.text = String(format: "%d", Int(roundSliderOutlet.value))
+        numberOfWords.text = String(format: "%d", Int(wordsSliderOutlet.value))
+        numberOfRound.text = String(format: "%d", Int(roundSliderOutlet.value))
 
-        self.tasksCheckmark.image = UIImage(systemName: SettingsManager.shared.isTasksEnabled
-                                            ? "checkmark.square.fill"
-                                            : "checkmark.square" )
-        self.penaltyCheckmark.image = UIImage(systemName: SettingsManager.shared.isPenaltyEnabled
-                                            ? "checkmark.square.fill"
-                                            : "checkmark.square" )
-        self.soundsCheckmark.image = UIImage(systemName: SettingsManager.shared.isSoundsEnabled
-                                            ? "checkmark.square.fill"
-                                            : "checkmark.square" )
+        tasksCheckmark.image = UIImage(systemName: SettingsManager.shared.isTasksEnabled
+                                       ? "checkmark.square.fill"
+                                       : "checkmark.square")
+        penaltyCheckmark.image = UIImage(systemName: SettingsManager.shared.isPenaltyEnabled
+                                         ? "checkmark.square.fill"
+                                         : "checkmark.square")
+        soundsCheckmark.image = UIImage(systemName: SettingsManager.shared.isSoundsEnabled
+                                        ? "checkmark.square.fill"
+                                        : "checkmark.square")
     }
 
     @objc func tasksCheckmarkAction() {
@@ -135,7 +133,7 @@ final class SettingsViewController: UIViewController {
             self?.reloadValues()
         }
         alert.addAction(action)
-        self.present(alert, animated: true)
+        present(alert, animated: true)
     }
 
     @objc func teamTwoAction() {
@@ -152,7 +150,7 @@ final class SettingsViewController: UIViewController {
             self?.reloadValues()
         }
         alert.addAction(action)
-        self.present(alert, animated: true)
+        present(alert, animated: true)
     }
 
 }
