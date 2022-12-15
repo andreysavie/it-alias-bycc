@@ -8,7 +8,7 @@
 import UIKit
 
 class GradientBorderButton: UIButton {
-    var gradientColors: [UIColor] = [.systemGreen, .systemMint] {
+    var gradientColors: [UIColor] = [.systemGreen, .systemTeal] {
         didSet {
             setNeedsLayout()
         }
