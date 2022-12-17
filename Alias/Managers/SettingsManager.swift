@@ -8,21 +8,21 @@
 import Foundation
 
 enum ValueType: String {
-    case teamOneName = "teamOneName"
-    case teamTwoName = "teamTwoName"
-    case numOfWords = "numOfWords"
-    case timeOfRound = "timeOfRound"
-    case isTasksEnabled = "isTasksEnabled"
-    case isPenaltyEnabled = "isPenaltyEnabled"
-    case isSoundsEnabled = "isSoundsEnabled"    
+    case teamOneName
+    case teamTwoName
+    case numOfWords
+    case timeOfRound
+    case isTasksEnabled
+    case isPenaltyEnabled
+    case isSoundsEnabled
 }
 
 final class SettingsManager {
-    
+
     static var shared = SettingsManager()
-    
+
     private let defaults = UserDefaults.standard
-    
+
     public var teamOneName: String { get { get(.teamOneName) } set { save(newValue, of: .teamOneName) } }
     public var teamTwoName: String { get { get(.teamTwoName) } set { save(newValue, of: .teamTwoName) } }
     public var numOfWords: Int { get { get(.numOfWords) } set { save(newValue, of: .numOfWords) } }
@@ -30,15 +30,14 @@ final class SettingsManager {
     public var isTasksEnabled: Bool { get { get(.isTasksEnabled) } set { save(newValue, of: .isTasksEnabled) } }
     public var isPenaltyEnabled: Bool { get { get(.isPenaltyEnabled) } set { save(newValue, of: .isPenaltyEnabled) } }
     public var isSoundsEnabled: Bool { get { get(.isSoundsEnabled) } set { save(newValue, of: .isSoundsEnabled) } }
-    
 }
 
 extension SettingsManager {
-    
+
     private func save<T>(_ value: T, of type: ValueType) {
         self.defaults.set(value, forKey: type.rawValue)
     }
-    
+
     private func get<T>(_ type: ValueType) -> T {
         switch type {
         case .teamOneName, .teamTwoName:
@@ -49,7 +48,7 @@ extension SettingsManager {
             return self.defaults.bool(forKey: type.rawValue) as! T
         }
     }
-    
+
     func setDefaultValues() {
         save("Juniors", of: .teamOneName)
         save("Seniors", of: .teamTwoName)
@@ -59,5 +58,5 @@ extension SettingsManager {
         save(false, of: .isPenaltyEnabled)
         save(false, of: .isSoundsEnabled)
     }
-}
 
+}
